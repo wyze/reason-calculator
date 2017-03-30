@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+lib
+.merlin
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log
+
+# macOS
+.*DS_Store

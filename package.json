@@ -1,0 +1,48 @@
+{
+  "name": "reason-calculator",
+  "private": true,
+  "version": "0.0.0",
+  "repository": "wyze/reason-calculator",
+  "author": {
+    "name": "Neil Kistner",
+    "email": "neil.kistner@gmail.com",
+    "url": "neilkistner.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:bsb": "bsb -make-world",
+    "build:webpack": "webpack -p",
+    "changelog": "changelog-maker --filter-release -- wyze reason-calculator",
+    "clean": "npm-run-all clean:*",
+    "clean:bsb": "bsb -clean-world",
+    "clean:project": "rimraf dist lib .merlin",
+    "deploy": "surge dist reason-calculator.surge.sh",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:bsb": "npm run build:bsb -- -w",
+    "dev:webpack": "webpack-dev-server -w",
+    "np": "np --no-publish --yolo",
+    "prebuild": "npm run clean",
+    "predeploy": "npm-run-all build np",
+    "version": "node scripts/version.js"
+  },
+  "devDependencies": {
+    "bs-platform": "^1.6.0",
+    "changelog-maker": "^2.2.5",
+    "execa": "^0.6.3",
+    "glamor": "^2.20.24",
+    "np": "^2.13.1",
+    "npm-run-all": "^4.0.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "read-pkg": "^2.0.0",
+    "reason-js": "^0.3.0",
+    "reason-react": "^0.1.0",
+    "reductive": "git+https://github.com/reasonml/reductive.git",
+    "rimraf": "^2.6.1",
+    "surge": "^0.19.0",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-html-plugin": "^0.1.1"
+  }
+}
