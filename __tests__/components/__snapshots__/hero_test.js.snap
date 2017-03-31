@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero renders 1`] = `
+<div
+  className={
+    Object {
+      "data-css-m5x6pd": "",
+    }
+  }
+>
+  <Title
+    reasonProps={0}
+  />
+  <Features
+    reasonProps={0}
+  />
+</div>
+`;

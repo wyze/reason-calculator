@@ -4,6 +4,7 @@
     "react-jsx": true
   },
   "bs-dependencies": [
+    "bs-jest",
     "reason-react",
     "reason-js",
     "reductive"
@@ -16,6 +17,15 @@
         "reductive",
         "styles"
       ]
+    },
+    {
+      "dir": "__tests__",
+      "subdirs": [
+        "components",
+        "reductive",
+        "utils"
+      ],
+      "type": "dev"
     }
   ]
 }

@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttons renders 1`] = `
+<div>
+  <ButtonGroup
+    reasonProps={
+      Array [
+        Array [
+          <ClearButton
+            reasonProps={
+                  Array [
+                        [Function],
+                      ]
+            }
+      />,
+          Array [
+            <OperationButton
+              reasonProps={
+                      Array [
+                              2,
+                              "",
+                              [Function],
+                            ]
+              }
+      />,
+            0,
+          ],
+        ],
+      ]
+    }
+  >
+    <ClearButton
+      reasonProps={
+        Array [
+          [Function],
+        ]
+      }
+    />
+    <OperationButton
+      reasonProps={
+        Array [
+          2,
+          "",
+          [Function],
+        ]
+      }
+    />
+  </ButtonGroup>
+  <ButtonGroup
+    reasonProps={
+      Array [
+        Array [
+          <ValueButton
+            reasonProps={
+                  Array [
+                        [Function],
+                        0,
+                        "7",
+                      ]
+            }
+      />,
+          Array [
+            <ValueButton
+              reasonProps={
+                      Array [
+                              [Function],
+                              0,
+                              "8",
+                            ]
+              }
+      />,
+            Array [
+              <ValueButton
+                reasonProps={
+                          Array [
+                                    [Function],
+                                    0,
+                                    "9",
+                                  ]
+                }
+      />,
+              Array [
+                <OperationButton
+                  reasonProps={
+                              Array [
+                                          5,
+                                          "",
+                                          [Function],
+                                        ]
+                  }
+      />,
+                0,
+              ],
+            ],
+          ],
+        ],
+      ]
+    }
+  >
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "7",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "8",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "9",
+        ]
+      }
+    />
+    <OperationButton
+      reasonProps={
+        Array [
+          5,
+          "",
+          [Function],
+        ]
+      }
+    />
+  </ButtonGroup>
+  <ButtonGroup
+    reasonProps={
+      Array [
+        Array [
+          <ValueButton
+            reasonProps={
+                  Array [
+                        [Function],
+                        0,
+                        "4",
+                      ]
+            }
+      />,
+          Array [
+            <ValueButton
+              reasonProps={
+                      Array [
+                              [Function],
+                              0,
+                              "5",
+                            ]
+              }
+      />,
+            Array [
+              <ValueButton
+                reasonProps={
+                          Array [
+                                    [Function],
+                                    0,
+                                    "6",
+                                  ]
+                }
+      />,
+              Array [
+                <OperationButton
+                  reasonProps={
+                              Array [
+                                          6,
+                                          "",
+                                          [Function],
+                                        ]
+                  }
+      />,
+                0,
+              ],
+            ],
+          ],
+        ],
+      ]
+    }
+  >
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "4",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "5",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "6",
+        ]
+      }
+    />
+    <OperationButton
+      reasonProps={
+        Array [
+          6,
+          "",
+          [Function],
+        ]
+      }
+    />
+  </ButtonGroup>
+  <ButtonGroup
+    reasonProps={
+      Array [
+        Array [
+          <ValueButton
+            reasonProps={
+                  Array [
+                        [Function],
+                        0,
+                        "1",
+                      ]
+            }
+      />,
+          Array [
+            <ValueButton
+              reasonProps={
+                      Array [
+                              [Function],
+                              0,
+                              "2",
+                            ]
+              }
+      />,
+            Array [
+              <ValueButton
+                reasonProps={
+                          Array [
+                                    [Function],
+                                    0,
+                                    "3",
+                                  ]
+                }
+      />,
+              Array [
+                <OperationButton
+                  reasonProps={
+                              Array [
+                                          0,
+                                          "",
+                                          [Function],
+                                        ]
+                  }
+      />,
+                0,
+              ],
+            ],
+          ],
+        ],
+      ]
+    }
+  >
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "1",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "2",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          "3",
+        ]
+      }
+    />
+    <OperationButton
+      reasonProps={
+        Array [
+          0,
+          "",
+          [Function],
+        ]
+      }
+    />
+  </ButtonGroup>
+  <ButtonGroup
+    reasonProps={
+      Array [
+        Array [
+          <ValueButton
+            reasonProps={
+                  Array [
+                        [Function],
+                        1,
+                        "0",
+                      ]
+            }
+      />,
+          Array [
+            <OperationButton
+              reasonProps={
+                      Array [
+                              3,
+                              "",
+                              [Function],
+                            ]
+              }
+      />,
+            0,
+          ],
+        ],
+      ]
+    }
+  >
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          1,
+          "0",
+        ]
+      }
+    />
+    <OperationButton
+      reasonProps={
+        Array [
+          3,
+          "",
+          [Function],
+        ]
+      }
+    />
+  </ButtonGroup>
+</div>
+`;

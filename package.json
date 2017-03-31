@@ -21,28 +21,44 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:bsb": "npm run build:bsb -- -w",
     "dev:webpack": "webpack-dev-server -w",
+    "jest": "jest",
     "np": "np --no-publish --yolo",
+    "postjest": "cp -rpf lib/js/__tests__/components/__snapshots__/* __tests__/components/__snapshots__/",
     "prebuild": "npm run clean",
     "predeploy": "npm-run-all build np",
+    "prejest": "mkdir -p lib/js/__tests__/components/__snapshots__ && cp -rpf __tests__/components/__snapshots__/* lib/js/__tests__/components/__snapshots__/",
+    "test": "npm-run-all build:bsb jest",
     "version": "node scripts/version.js"
   },
   "devDependencies": {
+    "bs-jest": "git+https://github.com/BuckleTypes/bs-jest.git",
     "bs-platform": "^1.6.0",
     "changelog-maker": "^2.2.5",
     "execa": "^0.6.3",
     "glamor": "^2.20.24",
+    "jest": "^19.0.2",
     "np": "^2.13.1",
     "npm-run-all": "^4.0.2",
     "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "read-pkg": "^2.0.0",
     "reason-js": "^0.3.0",
     "reason-react": "^0.1.0",
-    "reductive": "git+https://github.com/reasonml/reductive.git",
+    "reductive": "git+https://github.com/reasonml/reductive.git#73cc08bcce01c31ec6848239c1abf74926fd8fd7",
     "rimraf": "^2.6.1",
     "surge": "^0.19.0",
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2",
     "webpack-html-plugin": "^0.1.1"
+  },
+  "jest": {
+    "roots": [
+      "lib/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/utils/"
+    ]
   }
 }

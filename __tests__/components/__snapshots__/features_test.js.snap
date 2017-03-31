@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Features renders 1`] = `
+<div
+  className={
+    Object {
+      "data-css-186mv4h": "",
+    }
+  }
+>
+  <Feature
+    reasonProps={
+      Array [
+        0,
+        "Simple operations",
+      ]
+    }
+  />
+  <Feature
+    reasonProps={
+      Array [
+        1,
+        "Decimals",
+      ]
+    }
+  />
+  <Feature
+    reasonProps={
+      Array [
+        1,
+        "Percentage",
+      ]
+    }
+  />
+  <Feature
+    reasonProps={
+      Array [
+        1,
+        "Positive/Negative",
+      ]
+    }
+  />
+  <Feature
+    reasonProps={
+      Array [
+        1,
+        "Advanced options",
+      ]
+    }
+  />
+  <Feature
+    reasonProps={
+      Array [
+        1,
+        "Operation history",
+      ]
+    }
+  />
+</div>
+`;

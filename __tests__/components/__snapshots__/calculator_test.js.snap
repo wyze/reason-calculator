@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator renders 1`] = `
+<div
+  className={
+    Object {
+      "data-css-1b9zwg8": "",
+    }
+  }
+>
+  <div>
+    child
+  </div>
+  <span />
+</div>
+`;

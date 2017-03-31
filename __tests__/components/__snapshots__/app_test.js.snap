@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders 1`] = `
+<main
+  className={
+    Object {
+      "data-css-hzy630": "",
+    }
+  }
+>
+  <Hero
+    reasonProps={0}
+  />
+  <Calculator
+    reasonProps={
+      Array [
+        Array [
+          <Display
+            reasonProps={
+                  Array [
+                        "0",
+                      ]
+            }
+      />,
+          Array [
+            <Buttons
+              reasonProps={
+                      Array [
+                              [Function],
+                            ]
+              }
+      />,
+            0,
+          ],
+        ],
+      ]
+    }
+  >
+    <Display
+      reasonProps={
+        Array [
+          "0",
+        ]
+      }
+    />
+    <Buttons
+      reasonProps={
+        Array [
+          [Function],
+        ]
+      }
+    />
+  </Calculator>
+</main>
+`;

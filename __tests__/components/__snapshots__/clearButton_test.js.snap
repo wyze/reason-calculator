@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClearButton renders 1`] = `
+<OperationButton
+  reasonProps={
+    Array [
+      1,
+      Object {
+        "data-css-1gxh4ww": "",
+      },
+      [Function],
+    ]
+  }
+/>
+`;

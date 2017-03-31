@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feature renders checkmark emoji 1`] = `
+<div
+  className={
+    Object {
+      "data-css-151veg0": "",
+    }
+  }
+>
+  <Checkmark
+    reasonProps={0}
+  />
+  <h3>
+    A feature
+  </h3>
+</div>
+`;
+
+exports[`Feature renders soon emoji 1`] = `
+<div
+  className={
+    Object {
+      "data-css-151veg0": "",
+    }
+  }
+>
+  <Soon
+    reasonProps={0}
+  />
+  <h3>
+    A feature
+  </h3>
+</div>
+`;

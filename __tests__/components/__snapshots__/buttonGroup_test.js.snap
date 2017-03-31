@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup renders 1`] = `
+<div
+  className={
+    Object {
+      "data-css-1cqgl9p": "",
+    }
+  }
+>
+  <div>
+    child
+  </div>
+  <span />
+</div>
+`;
