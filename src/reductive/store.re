@@ -31,7 +31,10 @@ let reducer state action => {
       operations: state.operations @ (addEquals state.operations cur)
     }
     | Input input => {
-      operations: old @ [ cur |> Operation.update input ]
+      operations: switch cur.symbol {
+        | Equals => state.operations @ [ Operation.default |> Operation.update input ]
+        | _ => old @ [ cur |> Operation.update input ]
+      }
     }
     | Pending => state
     | _ => {

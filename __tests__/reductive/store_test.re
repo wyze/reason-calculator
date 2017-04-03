@@ -111,8 +111,7 @@ describe "store" (fun _ => {
     expect actual |> toEqual expected;
   });
 
-  /* TODO: Come back and fix the bug, this test should pass */
-  testSkip "reducer handles Input action after Equals state" (fun _ => {
+  test "reducer handles Input action after Equals state" (fun _ => {
     let state: Store.state = {
       operations: [
         Operation.create "1" "2" Action.Add 3,
