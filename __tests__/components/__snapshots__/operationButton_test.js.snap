@@ -2,7 +2,7 @@
 
 exports[`OperationButton renders 1`] = `
 <button
-  className="css-1nylyli css-1wf9u1s"
+  className="css-1uxa59e css-1efi2jj css-1c4ilrr css-1wf9u1s css-wlhq18"
   dangerouslySetInnerHTML={
     Object {
       "__html": "+",
@@ -14,7 +14,7 @@ exports[`OperationButton renders 1`] = `
 
 exports[`OperationButton renders a class name 1`] = `
 <button
-  className="css-1nylyli css-1wf9u1s css-aori8y"
+  className="css-1uxa59e css-1efi2jj css-1c4ilrr css-aori8y"
   dangerouslySetInnerHTML={
     Object {
       "__html": "+",

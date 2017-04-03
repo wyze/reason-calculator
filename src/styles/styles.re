@@ -9,6 +9,8 @@ let make = ReactDOMRe.Style.make;
 let global tag styles => glamor##css##global tag styles;
 let insert styles => glamor##css##insert styles;
 let className styles => glamor##css styles;
+let active styles => glamor##active styles;
+let hover styles => glamor##hover styles;
 
 /* Empty */
 let empty: string = className (make ());
@@ -31,6 +33,7 @@ external make2 :
   _MozOsxFontSmoothing::string? =>
   _WebkitFontSmoothing::string? =>
   _WebkitOverflowScrolling::string? =>
+  filter::string? =>
   textRendering::string? =>
   overflowX::string? =>
   overflowY::string? =>
@@ -113,17 +116,23 @@ let medias = [
 ];
 
 /* Style helper */
-let style ( tag, styles ) => glamor##css##global tag styles;
-let media mq => glamor##css##insert mq;
+let style ( tag, styles ) => global tag styles;
+let media mq => insert mq;
 
 /* Apply global styles/styles2 & media queries */
 let () = List.iter style (resets @ styles);
 let () = List.iter style styles2;
 let () = List.iter media medias;
 
+let flash: string =
+  glamor##css##keyframes {
+    "0%": { "background": "transparent" },
+    "100%": { "background": "#dddddd" },
+  };
+
 /* Button */
 let button: string =
-  className (
+  merge [
     make
       background::"#6d71ff"
       border::"none"
@@ -134,5 +143,9 @@ let button: string =
       fontSize::"1.5em"
       lineHeight::"2"
       outline::"none"
+      transition::"all .75s ease-in-out"
       ()
-  );
+    |> className,
+    make background::"#fafafa" color::"#6d71ff" () |> hover,
+    make animation::(flash ^ " 3s") () |> active,
+  ];

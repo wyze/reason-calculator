@@ -8,10 +8,10 @@ module ValueButton = {
     value: string,
   };
 
-  let button double =>
+  let button expand =>
     Styles.merge [
       Styles.button,
-      double
+      expand
         ? Styles.make flex::"75%" () |> Styles.className
         : Styles.empty
     ];

@@ -7,11 +7,10 @@ module ClearButton = {
   };
 
   let className: string =
-    Styles.make
-      background::"#3bf3a9"
-      flex::"75%"
-      ()
-    |> Styles.className;
+    Styles.merge [
+      Styles.make background::"#3bf3a9" flex::"75%" () |> Styles.className,
+      Styles.make color::"#3bf3a9" () |> Styles.hover,
+    ];
 
   let render { props: { dispatch } } =>
     <OperationButton className dispatch action=Clear />;

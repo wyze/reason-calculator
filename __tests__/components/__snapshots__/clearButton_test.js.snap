@@ -5,9 +5,7 @@ exports[`ClearButton renders 1`] = `
   reasonProps={
     Array [
       1,
-      Object {
-        "data-css-1gxh4ww": "",
-      },
+      "css-1gxh4ww css-1eo5al3",
       [Function],
     ]
   }

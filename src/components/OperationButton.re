@@ -8,13 +8,15 @@ module OperationButton = {
     dispatch: Store.action => unit,
   };
 
-  let operator: string =
-    Styles.make background::"#ff8754" () |> Styles.className;
   let button className =>
     Styles.merge [
       Styles.button,
-      operator,
-      Util.strEmpty className ? Styles.empty : className,
+      Util.strEmpty className
+        ? Styles.merge [
+            Styles.make background::"#ff8754" () |> Styles.className,
+            Styles.make color::"#ff8754" () |> Styles.hover,
+          ]
+        : className,
     ];
 
   let handleClick dispatch action => fun _ => dispatch action;
