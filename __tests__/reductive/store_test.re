@@ -157,27 +157,25 @@ describe "store" (fun _ => {
     let expected = {
       operations: [
         ( "1", "", Action.Pending, 1 ),
-        ( "1", "", Action.Add, 0 ),
+        ( "1", "", Action.Add, 1 ),
       ]
     };
 
     expect actual |> toEqual expected;
   });
 
-  /* TODO: Review this behavior */
-  test "reducer handles multiple Add action" (fun _ => {
+  test "reducer handles switch from Add to Subtract action" (fun _ => {
     let state: Store.state = {
       operations: [
         Operation.create "1" "" Action.Pending 1,
-        Operation.create "1" "" Action.Add 0,
+        Operation.create "1" "" Action.Add 1,
       ]
     };
-    let actual = Store.reducer state Action.Add |> toTuple;
+    let actual = Store.reducer state Action.Subtract |> toTuple;
     let expected = {
       operations: [
         ( "1", "", Action.Pending, 1 ),
-        ( "1", "", Action.Add, 0 ),
-        ( "0", "", Action.Add, 0 ),
+        ( "1", "", Action.Subtract, 1 ),
       ]
     };
 
@@ -198,7 +196,7 @@ describe "store" (fun _ => {
         ( "1", "", Action.Pending, 1 ),
         ( "1", "1", Action.Add, 2 ),
         ( "2", "2", Action.Equals, 2 ),
-        ( "2", "", Action.Add, 0 ),
+        ( "2", "", Action.Add, 2 ),
       ]
     };
 

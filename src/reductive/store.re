@@ -23,7 +23,7 @@ let addEquals lst (cur: Operation.model) => {
 let reducer state action => {
   let cur = Operation.last state.operations;
   let old = Operation.dropLastOne state.operations;
-  let create = [ Operation.create (Util.toString cur.total) "" action 0 ];
+  let create = [ Operation.create (Util.toString cur.total) "" action cur.total ];
 
   switch action {
     | Clear => init
@@ -38,7 +38,11 @@ let reducer state action => {
     }
     | Pending => state
     | _ => {
-      operations: state.operations @ create
+      operations: switch cur.symbol {
+        | Pending
+        | Equals => state.operations @ create
+        | _ => old @ create
+      }
     }
   };
 };
