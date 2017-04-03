@@ -1,6 +1,7 @@
 # reason-calculator
 
 [![Website][website-image]][website-url]
+[![Build Status][travis-image]][travis-url]
 [![dependencies][deps-image]][deps-url]
 [![devDependencies][depsdev-image]][depsdev-url]
 
@@ -44,6 +45,10 @@ MIT © [Neil Kistner](https://neilkistner.com)
 
 [website-image]: https://img.shields.io/website-up-down-green-red/https/reason-calculator.surge.sh.svg?style=flat-square
 [website-url]: https://reason-calculator.surge.sh
+
+[travis-image]: https://img.shields.io/travis/wyze/reason-calculator.svg?style=flat-square
+[travis-url]: https://travis-ci.org/wyze/reason-calculator
+
 
 [deps-image]: https://img.shields.io/david/wyze/reason-calculator.svg?style=flat-square
 [deps-url]: https://david-dm.org/wyze/reason-calculator

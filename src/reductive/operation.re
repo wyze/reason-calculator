@@ -6,13 +6,6 @@ type model = {
   total: int,
 };
 
-/* (() -> 'a) -> (() -> 'a) -> list model -> 'a */
-let isEmpty yes no lst =>
-  switch lst {
-    | [] => yes ()
-    | _ => no ()
-  };
-
 /* string -> string -> Action.model -> int -> model */
 let create left right symbol total =>
   { key: Random.bits () |> Util.toString, left, right, symbol, total };

@@ -185,7 +185,6 @@ describe "store" (fun _ => {
     expect actual |> toEqual expected;
   });
 
-  /* TODO: Review this behavior */
   test "reducer handles Add action after Equals action" (fun _ => {
     let state: Store.state = {
       operations: [

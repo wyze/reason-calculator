@@ -133,13 +133,6 @@ let button: string =
       flex::"25%"
       fontSize::"1.5em"
       lineHeight::"2"
-      /*fontWeight::"700"*/
       outline::"none"
-      /*textAlign::"center"*/
-      /*textTransform::"uppercase"*/
-      /*-webkit-appearance: none;
-      -webkit-font-smoothing: antialiased;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
-      /*width::"25%"*/
       ()
   );

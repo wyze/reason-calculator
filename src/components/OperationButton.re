@@ -9,7 +9,7 @@ module OperationButton = {
   };
 
   let operator: string =
-    Styles.className (Styles.make background::"#ff8754" ());
+    Styles.make background::"#ff8754" () |> Styles.className;
   let button className =>
     Styles.merge [
       Styles.button,
