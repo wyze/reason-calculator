@@ -23,27 +23,27 @@ let createEquals { total } => {
 
 /* Removes last element from the list and returns the rest of the list. */
 /* list model -> list model */
-let dropLastOne lst =>
+let tail lst =>
   switch lst {
+    | [ head, ...tail ] => tail
     | [] => lst
-    | _ => lst |> List.rev |> List.tl |> List.rev
   };
 
 /* ('a -> 'a -> a') -> string -> string -> int */
 let execute infix left right => infix (Util.toInt left) (Util.toInt right);
 
 /* list model -> model */
-let last lst =>
+let head lst =>
   switch lst {
+    | [ head, ...tail ] => head
     | [] => default
-    | _ => lst |> List.rev |> List.hd
   };
 
 /* list model -> (model -> bool) -> model */
-let findLast lst predicate =>
+let find lst predicate =>
   switch lst {
     | [] => default
-    | _ => lst |> List.rev |> List.find predicate
+    | _ => lst |> List.find predicate
   };
 
 /* string -> model -> model */
@@ -60,7 +60,7 @@ let getInput lst =>
   switch lst {
     | [] => "0"
     | _ => {
-      let { left, right } = last lst;
+      let { left, right } = head lst;
 
       Util.strEmpty right ? left : right;
     }
