@@ -580,7 +580,7 @@ bs-platform@^1.6.0:
 
 "bs-platform@https://github.com/bloomberg/bucklescript.git":
   version "1.6.1"
-  resolved "https://github.com/bloomberg/bucklescript.git#9dd60b2c7a557a5f48d75602b27a02644959a9c8"
+  resolved "https://github.com/bloomberg/bucklescript.git#12e88363c5d435c04eb0efaa6730062e3f56fb08"
 
 bs-promise@^0.3.0:
   version "0.3.0"
@@ -3744,10 +3744,6 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-reason-js@0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/reason-js/-/reason-js-0.0.16.tgz#1ac01f78b38fb6bfbb90d38bcd07c72a1b4e9236"
-
 reason-js@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/reason-js/-/reason-js-0.3.0.tgz#87ef218bf10e4e9be93bc44b459bec2c60cfdd02"
@@ -3758,9 +3754,9 @@ reason-react@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.1.0.tgz#e043db84254d3b85174925997f7e1740b4b425f7"
 
-"reason-react@git+https://github.com/reasonml/reason-react.git":
+"reason-react@https://github.com/reasonml/reason-react.git":
   version "0.1.0"
-  resolved "git+https://github.com/reasonml/reason-react.git#5869c68467a233cd4c99d5d7fcb326518b8d28d6"
+  resolved "https://github.com/reasonml/reason-react.git#59312e9287e2908e28015186cfbe05ada9c8f84f"
 
 redent@^1.0.0:
   version "1.0.0"
@@ -3769,15 +3765,12 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-"reductive@git+https://github.com/reasonml/reductive.git#73cc08bcce01c31ec6848239c1abf74926fd8fd7":
+"reductive@git+https://github.com/reasonml/reductive.git":
   version "0.0.0"
-  resolved "git+https://github.com/reasonml/reductive.git#73cc08bcce01c31ec6848239c1abf74926fd8fd7"
+  resolved "git+https://github.com/reasonml/reductive.git#4f3b51c0980f89716a16cb7e4ffad825d0fe793c"
   dependencies:
     bs-platform "https://github.com/bloomberg/bucklescript.git"
-    react "^15.4.2"
-    react-dom "^15.4.2"
-    reason-js "0.0.16"
-    reason-react "git+https://github.com/reasonml/reason-react.git"
+    reason-react "https://github.com/reasonml/reason-react.git"
 
 regenerator-runtime@^0.10.0:
   version "0.10.3"
