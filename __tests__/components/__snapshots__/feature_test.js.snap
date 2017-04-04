@@ -2,11 +2,7 @@
 
 exports[`Feature renders checkmark emoji 1`] = `
 <div
-  className={
-    Object {
-      "data-css-151veg0": "",
-    }
-  }
+  className="css-pat51 css-vlxvfg"
 >
   <Checkmark
     reasonProps={0}
@@ -19,11 +15,7 @@ exports[`Feature renders checkmark emoji 1`] = `
 
 exports[`Feature renders soon emoji 1`] = `
 <div
-  className={
-    Object {
-      "data-css-151veg0": "",
-    }
-  }
+  className="css-pat51 css-vlxvfg"
 >
   <Soon
     reasonProps={0}

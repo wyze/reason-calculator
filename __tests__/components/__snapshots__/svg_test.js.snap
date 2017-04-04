@@ -2,11 +2,7 @@
 
 exports[`Svg renders 1`] = `
 <div
-  className={
-    Object {
-      "data-css-citqzf": "",
-    }
-  }
+  className="css-1slixyj css-1df0zmg"
 >
   <svg
     enableBackground="new 0 0 64 64"

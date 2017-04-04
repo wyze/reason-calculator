@@ -8,13 +8,16 @@ module Svg = {
 
   let viewBox: string = "0 0 64 64";
   let className: string =
-    Styles.make
-      height::"16px"
-      marginRight::"1em"
-      marginTop::"-6px"
-      width::"16px"
-      ()
-    |> Styles.className;
+    Styles.merge [
+      Styles.make
+        height::"16px"
+        marginRight::"1em"
+        marginTop::"0"
+        width::"16px"
+        ()
+      |> Styles.className,
+      Styles.make marginTop::"-6px" () |> Styles.small,
+    ];
 
   let render { props: { children } } =>
     <div className>

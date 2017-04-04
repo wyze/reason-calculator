@@ -19,13 +19,16 @@ module Feature = {
     };
 
   let className: string =
-    Styles.make
-      alignItems::"center"
-      display::"flex"
-      flexBasis::"35%"
-      height::"2em"
-      ()
-    |> Styles.className;
+    Styles.merge [
+      Styles.make
+        alignItems::"center"
+        display::"flex"
+        flexBasis::"40%"
+        height::"2em"
+        ()
+      |> Styles.className,
+      Styles.make flexBasis::"35%" () |> Styles.small,
+    ];
 
   let render { props: { emoji, text } } =>
     <div className>

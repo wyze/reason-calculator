@@ -2,11 +2,7 @@
 
 exports[`Hero renders 1`] = `
 <div
-  className={
-    Object {
-      "data-css-m5x6pd": "",
-    }
-  }
+  className="css-owdkhh css-1rfi9k7"
 >
   <Title
     reasonProps={0}

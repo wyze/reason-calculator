@@ -12,6 +12,9 @@ let className styles => glamor##css styles;
 let active styles => glamor##active styles;
 let hover styles => glamor##hover styles;
 
+/* 850px */
+let small styles => glamor##media "only screen and (min-width: 53.125em)" styles;
+
 /* Empty */
 let empty: string = className (make ());
 
@@ -78,13 +81,13 @@ let styles = [
   (
     "body",
     make
-      alignItems::"center"
       background::"#efefef"
       color::"#838383"
       display::"flex"
       fontFamily::fontFamily
-      height::"100vh"
+      height::"calc(100vh - 3em)"
       justifyContent::"center"
+      marginTop::"3em"
       ()
   ),
 ];
