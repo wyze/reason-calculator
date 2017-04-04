@@ -1,5 +1,11 @@
 ## Change Log
 
+### [v1.1.0](https://github.com/wyze/reason-calculator/releases/tag/v1.1.0) (2017-04-04)
+
+* [[`872823b937`](https://github.com/wyze/reason-calculator/commit/872823b937)] - Cleanup PosNeg handling and fix potential bug when total would be 0 (Neil Kistner)
+* [[`7ce73e39fe`](https://github.com/wyze/reason-calculator/commit/7ce73e39fe)] - Add positive/negative button (Neil Kistner)
+* [[`164e1d9cf1`](https://github.com/wyze/reason-calculator/commit/164e1d9cf1)] - Remove all the reversing of the operations (Neil Kistner)
+
 ### [v1.0.1](https://github.com/wyze/reason-calculator/releases/tag/v1.0.1) (2017-04-03)
 
 * [[`7db4e02f0f`](https://github.com/wyze/reason-calculator/commit/7db4e02f0f)] - Fix bug when changing operation (i.e. Add -\> Subtract) (Neil Kistner)
