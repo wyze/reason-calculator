@@ -227,6 +227,22 @@ describe "store" (fun _ => {
     expect actual |> toEqual expected;
   });
 
+  test "reducer handles PosNeg action when total would be 0" (fun _ => {
+    let state: Store.state = {
+      operations: [
+        Operation.create "5" "5" Action.Subtract 0,
+      ]
+    };
+    let actual = Store.reducer state Action.PosNeg |> toTuple;
+    let expected = {
+      operations: [
+        ( "5", "-5", Action.Subtract, 10 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
   test "reducer handles PosNeg action with no right value" (fun _ => {
     let state: Store.state = {
       operations: [
