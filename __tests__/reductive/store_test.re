@@ -202,4 +202,101 @@ describe "store" (fun _ => {
 
     expect actual |> toEqual expected;
   });
+
+  test "reducer handles PosNeg action with initial state" (fun _ => {
+    let state: Store.state = Store.init;
+    let actual = Store.reducer state Action.PosNeg;
+    let expected: Store.state = { operations: [] };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles PosNeg action with Pending state" (fun _ => {
+    let state: Store.state = {
+      operations: [
+        Operation.create "4" "" Action.Pending 4,
+      ]
+    };
+    let actual = Store.reducer state Action.PosNeg |> toTuple;
+    let expected = {
+      operations: [
+        ( "-4", "", Action.Pending, -4 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles PosNeg action with no right value" (fun _ => {
+    let state: Store.state = {
+      operations: [
+        Operation.create "4" "" Action.Add 4,
+      ]
+    };
+    let actual = Store.reducer state Action.PosNeg |> toTuple;
+    let expected = {
+      operations: [
+        ( "4", "-4", Action.Add, 0 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles PosNeg action with non-Pending state" (fun _ => {
+    let state: Store.state = {
+      operations: [
+        Operation.create "4" "2" Action.Add 6,
+      ]
+    };
+    let actual = Store.reducer state Action.PosNeg |> toTuple;
+    let expected = {
+      operations: [
+        ( "4", "-2", Action.Add, 2 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles PosNeg -> Equals -> Equals" (fun _ => {
+    let state: Store.state = {
+      operations: [
+        Operation.create "-15" "-15" Action.Equals (-15),
+        Operation.create "5" "-3" Action.Multiply (-15),
+      ]
+    };
+    let actual = Store.reducer state Action.Equals |> toTuple;
+    let expected = {
+      operations: [
+        ( "45", "45", Action.Equals, 45 ),
+        ( "-15", "-3", Action.Multiply, 45 ),
+        ( "-15", "-15", Action.Equals, -15 ),
+        ( "5", "-3", Action.Multiply, -15 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles Equals -> PosNeg -> Equals" (fun _ => {
+    let equals: Store.state = {
+      operations: [
+        Operation.create "-15" "-15" Action.Equals (-15),
+        Operation.create "5" "-3" Action.Multiply (-15),
+      ]
+    };
+    let state = Store.reducer equals Action.PosNeg;
+    let actual = Store.reducer state Action.Equals |> toTuple;
+    let expected = {
+      operations: [
+        ( "-45", "-45", Action.Equals, -45 ),
+        ( "15", "-3", Action.Multiply, -45 ),
+        ( "15", "15", Action.Equals, 15 ),
+        ( "5", "-3", Action.Multiply, -15 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
 });

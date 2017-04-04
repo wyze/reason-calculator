@@ -19,6 +19,27 @@ let addEquals lst (cur: Operation.model) => {
   };
 };
 
+/* string -> string */
+let flipNumber num => num |> Util.toInt |> (*) (-1) |> Util.toString;
+
+/* list Operation.model -> Operation.model -> list Operation.model */
+let doPosNeg lst (cur: Operation.model) => {
+  let { left, right, symbol }: Operation.model = cur;
+
+  let prev = switch right {
+    | "" => switch symbol {
+      | Pending => Operation.create (flipNumber left) right symbol 0
+      | _ => Operation.create left (flipNumber left) symbol 0
+    }
+    | _ => switch symbol {
+      | Equals => Operation.create (flipNumber left) (flipNumber right) symbol 0
+      | _ => Operation.create left (flipNumber right) symbol 0
+    }
+  } |> Operation.update "";
+
+  [ prev ] @ lst;
+};
+
 /* state -> action -> state */
 let reducer state action => {
   let cur = Operation.head state.operations;
@@ -37,6 +58,12 @@ let reducer state action => {
       }
     }
     | Pending => state
+    | PosNeg => {
+      operations: switch cur.total {
+        | 0 => state.operations
+        | _ => doPosNeg old cur
+      }
+    }
     | _ => {
       operations: switch cur.symbol {
         | Pending

@@ -7,13 +7,10 @@ module ClearButton = {
   };
 
   let className: string =
-    Styles.merge [
-      Styles.make background::"#3bf3a9" flex::"75%" () |> Styles.className,
-      Styles.make color::"#3bf3a9" () |> Styles.hover,
-    ];
+    Styles.make flex::"50%" () |> Styles.className;
 
   let render { props: { dispatch } } =>
-    <OperationButton className dispatch action=Clear />;
+    <GreenButton className dispatch action=Clear />;
 };
 
 include ReactRe.CreateComponent ClearButton;

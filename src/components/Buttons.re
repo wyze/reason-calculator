@@ -10,6 +10,7 @@ module Buttons = {
     <div>
       <ButtonGroup>
         <ClearButton dispatch />
+        <GreenButton dispatch action=PosNeg />
         <OperationButton dispatch action=Divide />
       </ButtonGroup>
       <ButtonGroup>

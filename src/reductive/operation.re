@@ -50,6 +50,7 @@ let find lst predicate =>
 let update input { left, right, symbol } =>
   switch symbol {
     | Pending => create (left ^ input) right symbol (left ^ input |> Util.toInt)
+    | Equals => create left right symbol (left |> Util.toInt)
     | _ =>
       execute (Action.toInfix symbol) left (right ^ input)
         |> create left (right ^ input) symbol

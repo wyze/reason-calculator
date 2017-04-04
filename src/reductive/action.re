@@ -6,7 +6,8 @@ type model =
   | Pending
   | Input string
   | Multiply
-  | Subtract;
+  | Subtract
+  | PosNeg;
 
 /* model -> (int -> int -> int) */
 let toInfix action =>
@@ -28,5 +29,6 @@ let toText action =>
     | Equals => "="
     | Multiply => "&times;"
     | Subtract => "&minus;"
+    | PosNeg => "+/&minus;"
     | _ => ""
   };
