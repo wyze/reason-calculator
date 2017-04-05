@@ -9,15 +9,15 @@ type model =
   | Subtract
   | PosNeg;
 
-/* model -> (int -> int -> int) */
+/* model -> (float -> float -> float) */
 let toInfix action =>
   switch action {
-    | Add => (+)
-    | Divide => (/)
-    | Multiply => (*)
-    | Subtract => (-)
+    | Add => (+.)
+    | Divide => (/.)
+    | Multiply => (*.)
+    | Subtract => (-.)
     /* noop function */
-    | _ => (fun _ _ => 0)
+    | _ => (fun _ _ => 0.0)
   };
 
 /* model -> string */

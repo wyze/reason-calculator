@@ -1,8 +1,14 @@
-/* int -> string */
-let toInt s => int_of_string s;
+/* string -> float */
+let toFloat str => float_of_string str;
 
-/* string -> int */
-let toString i => string_of_int i;
+/* float -> string */
+let toString flt => {
+  let str = string_of_float flt;
+
+  Js.String.endsWith "." str
+    ? Js.String.replace "." "" str
+    : str;
+};
 
 /* string -> bool */
 let strEmpty str => String.length str == 0;

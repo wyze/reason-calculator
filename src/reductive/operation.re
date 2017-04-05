@@ -3,15 +3,15 @@ type model = {
   left: string,
   right: string,
   symbol: Action.model,
-  total: int,
+  total: float,
 };
 
-/* string -> string -> Action.model -> int -> model */
+/* string -> string -> Action.model -> float -> model */
 let create left right symbol total =>
-  { key: Random.bits () |> Util.toString, left, right, symbol, total };
+  { key: Random.bits () |> string_of_int, left, right, symbol, total };
 
 /* model */
-let default = create "" "" Pending 0;
+let default = create "" "" Pending 0.0;
 
 /* Shortcut to create an Action.Equals record */
 /* model -> model */
@@ -29,8 +29,8 @@ let tail lst =>
     | [] => lst
   };
 
-/* ('a -> 'a -> a') -> string -> string -> int */
-let execute infix left right => infix (Util.toInt left) (Util.toInt right);
+/* ('a -> 'a -> a') -> string -> string -> float */
+let execute infix left right => infix (Util.toFloat left) (Util.toFloat right);
 
 /* list model -> model */
 let head lst =>
@@ -49,8 +49,8 @@ let find lst predicate =>
 /* string -> model -> model */
 let update input { left, right, symbol } =>
   switch symbol {
-    | Pending => create (left ^ input) right symbol (left ^ input |> Util.toInt)
-    | Equals => create left right symbol (left |> Util.toInt)
+    | Pending => create (left ^ input) right symbol (left ^ input |> Util.toFloat)
+    | Equals => create left right symbol (left |> Util.toFloat)
     | _ =>
       execute (Action.toInfix symbol) left (right ^ input)
         |> create left (right ^ input) symbol
