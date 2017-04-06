@@ -1,5 +1,11 @@
 ## Change Log
 
+### [v1.2.0](https://github.com/wyze/reason-calculator/releases/tag/v1.2.0) (2017-04-06)
+
+* [[`cd9c2285f1`](https://github.com/wyze/reason-calculator/commit/cd9c2285f1)] - Add ability to enter decimals (Neil Kistner)
+* [[`93c692abc1`](https://github.com/wyze/reason-calculator/commit/93c692abc1)] - Remove stale Pending action (Neil Kistner)
+* [[`7458b780c5`](https://github.com/wyze/reason-calculator/commit/7458b780c5)] - Convert int to float to prepare for decimal functionality (Neil Kistner)
+
 ### [v1.1.1](https://github.com/wyze/reason-calculator/releases/tag/v1.1.1) (2017-04-05)
 
 * [[`1bb0ab69b1`](https://github.com/wyze/reason-calculator/commit/1bb0ab69b1)] - Upgrade reductive (Neil Kistner)
