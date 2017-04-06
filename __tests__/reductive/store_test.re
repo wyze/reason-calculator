@@ -157,7 +157,6 @@ describe "store" (fun _ => {
     let expected = {
       operations: [
         ( "1", "", Action.Add, 1.0 ),
-        ( "1", "", Action.Pending, 1.0 ),
       ]
     };
 

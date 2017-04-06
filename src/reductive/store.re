@@ -61,7 +61,6 @@ let reducer state action => {
     }
     | _ => {
       operations: switch cur.symbol {
-        | Pending
         | Equals => create @ state.operations
         | _ => create @ old
       }
