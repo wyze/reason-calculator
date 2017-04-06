@@ -344,16 +344,27 @@ exports[`Buttons renders 1`] = `
             }
       />,
           Array [
-            <OperationButton
+            <ValueButton
               reasonProps={
                       Array [
-                              3,
-                              "",
                               [Function],
+                              0,
+                              ".",
                             ]
               }
       />,
-            0,
+            Array [
+              <OperationButton
+                reasonProps={
+                          Array [
+                                    3,
+                                    "",
+                                    [Function],
+                                  ]
+                }
+      />,
+              0,
+            ],
           ],
         ],
       ]
@@ -365,6 +376,15 @@ exports[`Buttons renders 1`] = `
           [Function],
           1,
           "0",
+        ]
+      }
+    />
+    <ValueButton
+      reasonProps={
+        Array [
+          [Function],
+          0,
+          ".",
         ]
       }
     />

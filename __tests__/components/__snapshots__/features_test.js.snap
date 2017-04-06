@@ -19,7 +19,7 @@ exports[`Features renders 1`] = `
   <Feature
     reasonProps={
       Array [
-        1,
+        0,
         "Decimals",
       ]
     }

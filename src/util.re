@@ -1,5 +1,8 @@
+/* string -> bool */
+let strEmpty str => String.length str == 0;
+
 /* string -> float */
-let toFloat str => float_of_string str;
+let toFloat str => strEmpty str ? 0.0 : float_of_string str;
 
 /* float -> string */
 let toString flt => {
@@ -11,4 +14,4 @@ let toString flt => {
 };
 
 /* string -> bool */
-let strEmpty str => String.length str == 0;
+let isFloat str => Js.String.includes "." str;

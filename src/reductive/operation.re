@@ -47,14 +47,18 @@ let find lst predicate =>
   };
 
 /* string -> model -> model */
-let update input { left, right, symbol } =>
-  switch symbol {
-    | Pending => create (left ^ input) right symbol (left ^ input |> Util.toFloat)
-    | Equals => create left right symbol (left |> Util.toFloat)
-    | _ =>
-      execute (Action.toInfix symbol) left (right ^ input)
-        |> create left (right ^ input) symbol
+let update input { left, right, symbol } => {
+  let ( left', right' ) = switch ( input, symbol ) {
+    | ( ".", Pending ) => ( Util.isFloat left ? left : left ^ input, right )
+    | ( ".", _ ) => ( left, Util.isFloat right ? right : right ^ input )
+    | ( _, Pending ) => ( left ^ input, right )
+    | ( _, Equals ) => ( left, right )
+    | ( _, _ ) => ( left, right ^ input )
   };
+
+  execute (Action.toInfix symbol) left' right' |>
+    create left' right' symbol;
+};
 
 /* list model -> string */
 let getInput lst =>

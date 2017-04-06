@@ -2,11 +2,19 @@ open Jest;
 open Expect;
 
 type tuple = { operations: list ( string, string, Action.model, float ) };
+
 let toTuple ({ operations }: Store.state): tuple => {
   operations: List.map
     (fun { Operation.left, right, symbol, total } => ( left, right, symbol, total ))
     operations
 };
+
+let reduce state action => Store.reducer state action;
+
+let run actions =>
+  actions
+    |> List.fold_left reduce Store.init
+    |> toTuple;
 
 let _ =
 
@@ -309,6 +317,51 @@ describe "store" (fun _ => {
         ( "15", "-3", Action.Multiply, -45.0 ),
         ( "15", "15", Action.Equals, 15.0 ),
         ( "5", "-3", Action.Multiply, -15.0 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles decimals" (fun _ => {
+    let actual = [
+      Action.Input "5",
+      Action.Input ".",
+      Action.Input "3",
+      Action.Add,
+      Action.Input "4",
+      Action.Input ".",
+      Action.Input "7",
+      Action.Equals,
+    ] |> run;
+    let expected = {
+      operations: [
+        ( "10", "10", Action.Equals, 10.0 ),
+        ( "5.3", "4.7", Action.Add, 10.0 ),
+      ]
+    };
+
+    expect actual |> toEqual expected;
+  });
+
+  test "reducer handles double decimals" (fun _ => {
+    let actual = [
+      Action.Input "2",
+      Action.Input ".",
+      Action.Input ".",
+      Action.Input "3",
+      Action.Add,
+      Action.Input "2",
+      Action.Input ".",
+      Action.Input "7",
+      Action.Input ".",
+      Action.Input "5",
+      Action.Equals,
+    ] |> run;
+    let expected = {
+      operations: [
+        ( "5.05", "5.05", Action.Equals, 5.05 ),
+        ( "2.3", "2.75", Action.Add, 5.05 ),
       ]
     };
 

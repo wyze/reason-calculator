@@ -12,7 +12,7 @@ module ValueButton = {
     Styles.merge [
       Styles.button,
       expand
-        ? Styles.make flex::"75%" () |> Styles.className
+        ? Styles.make flex::"50%" paddingLeft::".9em" textAlign::"left" () |> Styles.className
         : Styles.empty
     ];
 

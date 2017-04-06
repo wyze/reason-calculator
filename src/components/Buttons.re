@@ -33,6 +33,7 @@ module Buttons = {
       </ButtonGroup>
       <ButtonGroup>
         <ValueButton dispatch expand=true value="0" />
+        <ValueButton dispatch value="." />
         <OperationButton dispatch action=Equals />
       </ButtonGroup>
     </div>;

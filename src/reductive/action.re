@@ -17,7 +17,7 @@ let toInfix action =>
     | Multiply => (*.)
     | Subtract => (-.)
     /* noop function */
-    | _ => (fun _ _ => 0.0)
+    | _ => (fun left _ => left)
   };
 
 /* model -> string */
