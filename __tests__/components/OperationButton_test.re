@@ -9,7 +9,7 @@ describe "OperationButton" (fun _ => {
     let dispatch = fun _ => ();
     let tree = OperationButton.createElement ::action ::dispatch children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 
   test "renders a class name" (fun _ => {
@@ -19,6 +19,6 @@ describe "OperationButton" (fun _ => {
     let tree = OperationButton.createElement ::action ::className ::dispatch children::[] ()
       |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

@@ -9,7 +9,7 @@ describe "Feature" (fun _ => {
     let text = "A feature";
     let tree = Feature.createElement ::emoji ::text children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot
+    expect tree |> toMatchSnapshot
   });
 
   test "renders soon emoji" (fun _ => {
@@ -17,6 +17,6 @@ describe "Feature" (fun _ => {
     let text = "A feature";
     let tree = Feature.createElement ::emoji ::text children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

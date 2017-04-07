@@ -8,6 +8,6 @@ describe "Calculator" (fun _ => {
     let children = [ <div>(ReactRe.stringToElement "child")</div>, <span /> ];
     let tree = Calculator.createElement ::children () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

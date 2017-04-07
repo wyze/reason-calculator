@@ -1,5 +1,6 @@
 open Jest;
 open Expect;
+open Action;
 
 type tuple = { operations: list ( string, string, Action.model, float ) };
 
@@ -27,28 +28,28 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles Clear action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.default,
-      ]
-    };
-    let actual = Store.reducer state Action.Clear;
-    let expected: Store.state = { operations: [] };
+    let actual = [
+      Input "1",
+      Add,
+      Input "3",
+      Clear,
+    ] |> run;
+    let expected = { operations: [] };
 
     expect actual |> toEqual expected;
   });
 
   test "reducer handles Equals action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "1" "2" Action.Add 3.0,
-      ]
-    };
-    let actual = Store.reducer state Action.Equals |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+      Input "2",
+      Equals,
+    ] |> run;
     let expected = {
       operations: [
-        ( "3", "3", Action.Equals, 3.0 ),
-        ( "1", "2", Action.Add, 3.0 ),
+        ( "3", "3", Equals, 3.0 ),
+        ( "1", "2", Add, 3.0 ),
       ]
     };
 
@@ -56,19 +57,19 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles double Equals action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "3" "3" Action.Equals 3.0,
-        Operation.create "1" "2" Action.Add 3.0,
-      ]
-    };
-    let actual = Store.reducer state Action.Equals |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+      Input "2",
+      Equals,
+      Equals,
+    ] |> run;
     let expected = {
       operations: [
-        ( "5", "5", Action.Equals, 5.0 ),
-        ( "3", "2", Action.Add, 5.0 ),
-        ( "3", "3", Action.Equals, 3.0 ),
-        ( "1", "2", Action.Add, 3.0 ),
+        ( "5", "5", Equals, 5.0 ),
+        ( "3", "2", Add, 5.0 ),
+        ( "3", "3", Equals, 3.0 ),
+        ( "1", "2", Add, 3.0 ),
       ]
     };
 
@@ -76,11 +77,12 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles Input action with no previous state" (fun _ => {
-    let state: Store.state = Store.init;
-    let actual = Store.reducer state (Action.Input "4") |> toTuple;
+    let actual = [
+      Input "4",
+    ] |> run;
     let expected = {
       operations: [
-        ( "4", "", Action.Pending, 4.0 ),
+        ( "4", "", Pending, 4.0 ),
       ]
     };
 
@@ -88,15 +90,13 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles Input action with Pending state" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "1" "" Action.Pending 1.0,
-      ]
-    };
-    let actual = Store.reducer state (Action.Input "4") |> toTuple;
+    let actual = [
+      Input "1",
+      Input "4",
+    ] |> run;
     let expected = {
       operations: [
-        ( "14", "", Action.Pending, 14.0 ),
+        ( "14", "", Pending, 14.0 ),
       ]
     };
 
@@ -104,15 +104,14 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles Input action with non-Pending state" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "1" "" Action.Add 1.0,
-      ]
-    };
-    let actual = Store.reducer state (Action.Input "4") |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+      Input "4",
+    ] |> run;
     let expected = {
       operations: [
-        ( "1", "4", Action.Add, 5.0 ),
+        ( "1", "4", Add, 5.0 ),
       ]
     };
 
@@ -120,51 +119,32 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles Input action after Equals state" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "3" "3" Action.Equals 3.0,
-        Operation.create "1" "2" Action.Add 3.0,
-      ]
-    };
-    let actual = Store.reducer state (Action.Input "4") |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+      Input "2",
+      Equals,
+      Input "4",
+    ] |> run;
     let expected = {
       operations: [
-        ( "4", "", Action.Pending, 4.0 ),
-        ( "3", "3", Action.Equals, 3.0 ),
-        ( "1", "2", Action.Add, 3.0 ),
+        ( "4", "", Pending, 4.0 ),
+        ( "3", "3", Equals, 3.0 ),
+        ( "1", "2", Add, 3.0 ),
       ]
     };
 
     expect actual |> toEqual expected;
   });
 
-  test "reducer handles Pending action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "1" "2" Action.Add 3.0,
-      ]
-    };
-    let actual = Store.reducer state Action.Pending |> toTuple;
-    let expected = {
-      operations: [
-        ( "1", "2", Action.Add, 3.0 ),
-      ]
-    };
-
-    expect actual |> toEqual expected;
-  });
-
-  /* TODO: Review behavior, might not be right */
   test "reducer handles Add action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "1" "" Action.Pending 1.0,
-      ]
-    };
-    let actual = Store.reducer state Action.Add |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+    ] |> run;
     let expected = {
       operations: [
-        ( "1", "", Action.Add, 1.0 ),
+        ( "1", "", Add, 1.0 ),
       ]
     };
 
@@ -172,17 +152,14 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles switch from Add to Subtract action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "1" "" Action.Add 1.0,
-        Operation.create "1" "" Action.Pending 1.0,
-      ]
-    };
-    let actual = Store.reducer state Action.Subtract |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+      Subtract,
+    ] |> run;
     let expected = {
       operations: [
-        ( "1", "", Action.Subtract, 1.0 ),
-        ( "1", "", Action.Pending, 1.0 ),
+        ( "1", "", Subtract, 1.0 ),
       ]
     };
 
@@ -190,154 +167,154 @@ describe "store" (fun _ => {
   });
 
   test "reducer handles Add action after Equals action" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "2" "2" Action.Equals 2.0,
-        Operation.create "1" "1" Action.Add 2.0,
-        Operation.create "1" "" Action.Pending 1.0,
-      ]
-    };
-    let actual = Store.reducer state Action.Add |> toTuple;
+    let actual = [
+      Input "1",
+      Add,
+      Input "1",
+      Equals,
+      Add,
+    ] |> run;
     let expected = {
       operations: [
-        ( "2", "", Action.Add, 2.0 ),
-        ( "2", "2", Action.Equals, 2.0 ),
-        ( "1", "1", Action.Add, 2.0 ),
-        ( "1", "", Action.Pending, 1.0 ),
+        ( "2", "", Add, 2.0 ),
+        ( "2", "2", Equals, 2.0 ),
+        ( "1", "1", Add, 2.0 ),
       ]
     };
 
     expect actual |> toEqual expected;
   });
 
-  test "reducer handles PosNeg action with initial state" (fun _ => {
-    let state: Store.state = Store.init;
-    let actual = Store.reducer state Action.PosNeg;
-    let expected: Store.state = { operations: [] };
+  describe "PosNeg" (fun _ => {
+    test "with initial state" (fun _ => {
+      let actual = [
+        PosNeg,
+      ] |> run;
+      let expected = { operations: [] };
 
-    expect actual |> toEqual expected;
-  });
+      expect actual |> toEqual expected;
+    });
 
-  test "reducer handles PosNeg action with Pending state" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "4" "" Action.Pending 4.0,
-      ]
-    };
-    let actual = Store.reducer state Action.PosNeg |> toTuple;
-    let expected = {
-      operations: [
-        ( "-4", "", Action.Pending, -4.0 ),
-      ]
-    };
+    test "with Pending state" (fun _ => {
+      let actual = [
+        Input "4",
+        PosNeg,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "-4", "", Pending, -4.0 ),
+        ]
+      };
 
-    expect actual |> toEqual expected;
-  });
+      expect actual |> toEqual expected;
+    });
 
-  test "reducer handles PosNeg action when total would be 0" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "5" "5" Action.Subtract 0.0,
-      ]
-    };
-    let actual = Store.reducer state Action.PosNeg |> toTuple;
-    let expected = {
-      operations: [
-        ( "5", "-5", Action.Subtract, 10.0 ),
-      ]
-    };
+    test "when total would be 0" (fun _ => {
+      let actual = [
+        Input "5",
+        Subtract,
+        Input "5",
+        PosNeg,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "5", "-5", Subtract, 10.0 ),
+        ]
+      };
 
-    expect actual |> toEqual expected;
-  });
+      expect actual |> toEqual expected;
+    });
 
-  test "reducer handles PosNeg action with no right value" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "4" "" Action.Add 4.0,
-      ]
-    };
-    let actual = Store.reducer state Action.PosNeg |> toTuple;
-    let expected = {
-      operations: [
-        ( "4", "-4", Action.Add, 0.0 ),
-      ]
-    };
+    test "with no right value" (fun _ => {
+      let actual = [
+        Input "4",
+        Add,
+        PosNeg,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "4", "-4", Add, 0.0 ),
+        ]
+      };
 
-    expect actual |> toEqual expected;
-  });
+      expect actual |> toEqual expected;
+    });
 
-  test "reducer handles PosNeg action with non-Pending state" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "4" "2" Action.Add 6.0,
-      ]
-    };
-    let actual = Store.reducer state Action.PosNeg |> toTuple;
-    let expected = {
-      operations: [
-        ( "4", "-2", Action.Add, 2.0 ),
-      ]
-    };
+    test "with non-Pending state" (fun _ => {
+      let actual = [
+        Input "4",
+        Add,
+        Input "2",
+        PosNeg,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "4", "-2", Add, 2.0 ),
+        ]
+      };
 
-    expect actual |> toEqual expected;
-  });
+      expect actual |> toEqual expected;
+    });
 
-  test "reducer handles PosNeg -> Equals -> Equals" (fun _ => {
-    let state: Store.state = {
-      operations: [
-        Operation.create "-15" "-15" Action.Equals (-15.0),
-        Operation.create "5" "-3" Action.Multiply (-15.0),
-      ]
-    };
-    let actual = Store.reducer state Action.Equals |> toTuple;
-    let expected = {
-      operations: [
-        ( "45", "45", Action.Equals, 45.0 ),
-        ( "-15", "-3", Action.Multiply, 45.0 ),
-        ( "-15", "-15", Action.Equals, -15.0 ),
-        ( "5", "-3", Action.Multiply, -15.0 ),
-      ]
-    };
+    test "handles sequence: PosNeg -> Equals -> Equals" (fun _ => {
+      let actual = [
+        Input "5",
+        Multiply,
+        Input "3",
+        PosNeg,
+        Equals,
+        Equals,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "45", "45", Equals, 45.0 ),
+          ( "-15", "-3", Multiply, 45.0 ),
+          ( "-15", "-15", Equals, -15.0 ),
+          ( "5", "-3", Multiply, -15.0 ),
+        ]
+      };
 
-    expect actual |> toEqual expected;
-  });
+      expect actual |> toEqual expected;
+    });
 
-  test "reducer handles Equals -> PosNeg -> Equals" (fun _ => {
-    let equals: Store.state = {
-      operations: [
-        Operation.create "-15" "-15" Action.Equals (-15.0),
-        Operation.create "5" "-3" Action.Multiply (-15.0),
-      ]
-    };
-    let state = Store.reducer equals Action.PosNeg;
-    let actual = Store.reducer state Action.Equals |> toTuple;
-    let expected = {
-      operations: [
-        ( "-45", "-45", Action.Equals, -45.0 ),
-        ( "15", "-3", Action.Multiply, -45.0 ),
-        ( "15", "15", Action.Equals, 15.0 ),
-        ( "5", "-3", Action.Multiply, -15.0 ),
-      ]
-    };
+    test "handles sequence: Equals -> PosNeg -> Equals" (fun _ => {
+      let actual = [
+        Input "5",
+        Multiply,
+        Input "3",
+        PosNeg,
+        Equals,
+        PosNeg,
+        Equals,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "-45", "-45", Equals, -45.0 ),
+          ( "15", "-3", Multiply, -45.0 ),
+          ( "15", "15", Equals, 15.0 ),
+          ( "5", "-3", Multiply, -15.0 ),
+        ]
+      };
 
-    expect actual |> toEqual expected;
+      expect actual |> toEqual expected;
+    });
   });
 
   test "reducer handles decimals" (fun _ => {
     let actual = [
-      Action.Input "5",
-      Action.Input ".",
-      Action.Input "3",
-      Action.Add,
-      Action.Input "4",
-      Action.Input ".",
-      Action.Input "7",
-      Action.Equals,
+      Input "5",
+      Input ".",
+      Input "3",
+      Add,
+      Input "4",
+      Input ".",
+      Input "7",
+      Equals,
     ] |> run;
     let expected = {
       operations: [
-        ( "10", "10", Action.Equals, 10.0 ),
-        ( "5.3", "4.7", Action.Add, 10.0 ),
+        ( "10", "10", Equals, 10.0 ),
+        ( "5.3", "4.7", Add, 10.0 ),
       ]
     };
 
@@ -346,22 +323,22 @@ describe "store" (fun _ => {
 
   test "reducer handles double decimals" (fun _ => {
     let actual = [
-      Action.Input "2",
-      Action.Input ".",
-      Action.Input ".",
-      Action.Input "3",
-      Action.Add,
-      Action.Input "2",
-      Action.Input ".",
-      Action.Input "7",
-      Action.Input ".",
-      Action.Input "5",
-      Action.Equals,
+      Input "2",
+      Input ".",
+      Input ".",
+      Input "3",
+      Add,
+      Input "2",
+      Input ".",
+      Input "7",
+      Input ".",
+      Input "5",
+      Equals,
     ] |> run;
     let expected = {
       operations: [
-        ( "5.05", "5.05", Action.Equals, 5.05 ),
-        ( "2.3", "2.75", Action.Add, 5.05 ),
+        ( "5.05", "5.05", Equals, 5.05 ),
+        ( "2.3", "2.75", Add, 5.05 ),
       ]
     };
 

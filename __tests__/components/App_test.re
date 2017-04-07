@@ -9,6 +9,6 @@ describe "App" (fun _ => {
     let state = Store.init;
     let tree = App.createElement ::state ::dispatch children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

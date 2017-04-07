@@ -8,6 +8,6 @@ describe "Svg" (fun _ => {
     let children = [ <g />, <path /> ];
     let tree = Svg.createElement ::children () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

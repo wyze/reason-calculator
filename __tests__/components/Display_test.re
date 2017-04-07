@@ -8,6 +8,6 @@ describe "Display" (fun _ => {
     let output = "42";
     let tree = Display.createElement ::output children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

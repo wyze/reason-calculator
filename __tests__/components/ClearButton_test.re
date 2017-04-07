@@ -8,6 +8,6 @@ describe "ClearButton" (fun _ => {
     let dispatch = fun _ => ();
     let tree = ClearButton.createElement ::dispatch children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

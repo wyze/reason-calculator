@@ -7,6 +7,6 @@ describe "Title" (fun _ => {
   test "renders" (fun _ => {
     let tree = Title.createElement children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

@@ -8,6 +8,6 @@ describe "Buttons" (fun _ => {
     let dispatch = fun _ => ();
     let tree = Buttons.createElement ::dispatch children::[] () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });

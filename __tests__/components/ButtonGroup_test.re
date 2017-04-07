@@ -8,6 +8,6 @@ describe "ButtonGroup" (fun _ => {
     let children = [ <div>(ReactRe.stringToElement "child")</div>, <span /> ];
     let tree = ButtonGroup.createElement ::children () |> Renderer.render;
 
-    (expect tree) |> toMatchSnapshot;
+    expect tree |> toMatchSnapshot;
   });
 });
