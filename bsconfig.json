@@ -4,28 +4,41 @@
     "react-jsx": true
   },
   "bs-dependencies": [
-    "bs-jest",
     "reason-react",
     "reason-js",
     "reductive"
   ],
+  "bs-dev-dependencies": [
+    "bs-jest",
+    "bs-react-test-renderer"
+  ],
+  "js-post-build": {
+    "cmd": "./scripts/copy.js"
+  },
   "sources": [
     {
       "dir": "src",
       "subdirs": [
-        "components",
-        "reductive",
+        {
+          "dir": "components",
+          "subdirs": [
+            {
+              "dir": "__tests__",
+              "type": "dev"
+            }
+          ]
+        },
+        {
+          "dir": "reductive",
+          "subdirs": [
+            {
+              "dir": "__tests__",
+              "type": "dev"
+            }
+          ]
+        },
         "styles"
       ]
-    },
-    {
-      "dir": "__tests__",
-      "subdirs": [
-        "components",
-        "reductive",
-        "utils"
-      ],
-      "type": "dev"
     }
   ]
 }

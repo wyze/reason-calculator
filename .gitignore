@@ -2,14 +2,13 @@
 node_modules
 
 # Build
+src/**/*.js
 dist
 lib
 .merlin
 
 # Logs
 *.log
-npm-debug.log*
-yarn-error.log
 
 # macOS
 .*DS_Store

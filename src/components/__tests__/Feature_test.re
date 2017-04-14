@@ -7,7 +7,8 @@ describe "Feature" (fun _ => {
   test "renders checkmark emoji" (fun _ => {
     let emoji = Feature.Feature.Checkmark;
     let text = "A feature";
-    let tree = Feature.createElement ::emoji ::text children::[] () |> Renderer.render;
+    let tree = Feature.createElement ::emoji ::text children::[] ()
+      |> ReactShallowRenderer.renderWithRenderer;
 
     expect tree |> toMatchSnapshot
   });
@@ -15,7 +16,8 @@ describe "Feature" (fun _ => {
   test "renders soon emoji" (fun _ => {
     let emoji = Feature.Feature.Soon;
     let text = "A feature";
-    let tree = Feature.createElement ::emoji ::text children::[] () |> Renderer.render;
+    let tree = Feature.createElement ::emoji ::text children::[] ()
+      |> ReactShallowRenderer.renderWithRenderer;
 
     expect tree |> toMatchSnapshot;
   });

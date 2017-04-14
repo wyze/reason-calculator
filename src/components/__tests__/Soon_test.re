@@ -5,7 +5,7 @@ let _ =
 
 describe "Soon" (fun _ => {
   test "renders" (fun _ => {
-    let tree = Soon.createElement children::[] () |> Renderer.render;
+    let tree = Soon.createElement children::[] () |> ReactShallowRenderer.renderWithRenderer;
 
     expect tree |> toMatchSnapshot;
   });

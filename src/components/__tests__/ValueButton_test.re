@@ -8,7 +8,7 @@ describe "ValueButton" (fun _ => {
     let dispatch = fun _ => ();
     let value = "1";
     let tree = ValueButton.createElement ::dispatch ::value children::[] ()
-      |> Renderer.render;
+      |> ReactShallowRenderer.renderWithRenderer;
 
     expect tree |> toMatchSnapshot;
   });
@@ -18,7 +18,7 @@ describe "ValueButton" (fun _ => {
     let expand = true;
     let value = "1";
     let tree = ValueButton.createElement ::dispatch ::expand ::value children::[] ()
-      |> Renderer.render;
+      |> ReactShallowRenderer.renderWithRenderer;
 
     expect tree |> toMatchSnapshot;
   });
