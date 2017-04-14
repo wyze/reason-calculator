@@ -5,7 +5,6 @@
   },
   "bs-dependencies": [
     "reason-react",
-    "reason-js",
     "reductive"
   ],
   "bs-dev-dependencies": [
