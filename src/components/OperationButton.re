@@ -24,7 +24,7 @@ module OperationButton = {
   let render { props: { action, className, dispatch } } =>
     <button
       className=(button className)
-      dangerouslySetInnerHTML=((Obj.magic { "__html": Action.toText action }): string)
+      dangerouslySetInnerHTML={ "__html": Action.toText action }
       onClick=(handleClick dispatch action)
     />;
 };
