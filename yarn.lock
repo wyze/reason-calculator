@@ -235,9 +235,9 @@ async@^1.4.0, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.1.2, async@^2.1.4, async@~2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
+async@^2.1.2, async@^2.1.4:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.3.0.tgz#1013d1051047dd320fe24e494d5c66ecaf6147d9"
   dependencies:
     lodash "^4.14.0"
 
@@ -248,6 +248,12 @@ async@~0.1.22:
 async@~0.9.0:
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
+
+async@~2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
+  dependencies:
+    lodash "^4.14.0"
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -566,10 +572,6 @@ browserify-zlib@^0.1.4:
   resolved "https://registry.yarnpkg.com/browserify-zlib/-/browserify-zlib-0.1.4.tgz#bb35f8a519f600e0fa6b8485241c979d0141fb2d"
   dependencies:
     pako "~0.2.0"
-
-"bs-fetch@github:buckletypes/bs-fetch":
-  version "0.1.0"
-  resolved "https://codeload.github.com/buckletypes/bs-fetch/tar.gz/dfc68f86f68cd3e96611db5967bb616c6dc820bd"
 
 "bs-jest@git+https://github.com/BuckleTypes/bs-jest.git":
   version "0.0.1"
@@ -1080,13 +1082,13 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@2.6.1:
+debug@2.6.1, debug@^2.2.0, debug@~2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.3, debug@^2.1.1, debug@^2.2.0, debug@~2.6.1:
+debug@2.6.3, debug@^2.1.1:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.3.tgz#0f7eb8c30965ec08c72accfa0130c8b79984141d"
   dependencies:
@@ -2023,9 +2025,13 @@ i@0.3.x:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/i/-/i-0.3.5.tgz#1d2b854158ec8169113c6cb7f6b6801e99e211d5"
 
-iconv-lite@0.4.13, iconv-lite@~0.4.13:
+iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
+
+iconv-lite@~0.4.13:
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
 ieee754@^1.1.4:
   version "1.1.8"
@@ -3754,19 +3760,13 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-reason-js@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/reason-js/-/reason-js-0.3.0.tgz#87ef218bf10e4e9be93bc44b459bec2c60cfdd02"
-  dependencies:
-    bs-fetch BuckleTypes/bs-fetch
-
-reason-react@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.1.0.tgz#e043db84254d3b85174925997f7e1740b4b425f7"
+reason-react@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.1.1.tgz#479780dd0dde32959214208c381c1c61b47934d7"
 
 "reason-react@https://github.com/reasonml/reason-react.git":
-  version "0.1.0"
-  resolved "https://github.com/reasonml/reason-react.git#503f7e3a54222b2c3f403fc632da2fd20a118060"
+  version "0.1.1"
+  resolved "https://github.com/reasonml/reason-react.git#bfe1d220aef1674c05a804db12635bd01690a639"
 
 redent@^1.0.0:
   version "1.0.0"
