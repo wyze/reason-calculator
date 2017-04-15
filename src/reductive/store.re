@@ -19,17 +19,18 @@ let addEquals lst (cur: Operation.model) => {
   };
 };
 
-/* string -> string */
-let flipNumber num => num |> Util.toFloat |> (*.) (-1.0) |> Util.toString;
+/* float -> string -> string */
+let multiply factor num => num |> Util.toFloat |> (*.) factor |> Util.toString;
 
-/* Operation.model -> Operation.model */
-let doPosNeg cur => {
+/* float -> Operation.model -> Operation.model */
+let doOperation factor cur => {
+  let op = multiply factor;
   let { left, right, symbol }: Operation.model = cur;
   let ( left', right' ) = switch ( right, symbol ) {
-    | ( "", Pending ) => ( flipNumber left, right )
-    | ( "", _ ) => ( left, flipNumber left )
-    | ( _, Equals ) => ( flipNumber left, flipNumber right )
-    | ( _, _ ) => ( left, flipNumber right )
+    | ( "", Pending ) => ( op left, right )
+    | ( "", _ ) => ( left, op left )
+    | ( _, Equals ) => ( op left, op right )
+    | ( _, _ ) => ( left, op right )
   };
 
   Operation.create left' right' symbol 0.0 |> Operation.update "";
@@ -53,10 +54,12 @@ let reducer state action => {
       }
     }
     | Pending => state
+    | Percent
     | PosNeg => {
-      operations: switch ( cur.symbol, cur.total ) {
-        | ( Pending, 0.0 ) => state.operations
-        | ( _, _ ) => [ doPosNeg cur ] @ old
+      operations: switch ( action, cur.symbol, cur.total ) {
+        | ( _, Pending, 0.0 ) => state.operations
+        | ( Percent, _, _ ) => [ doOperation 0.01 cur ] @ old
+        | ( PosNeg, _, _ ) => [ doOperation (-1.0) cur ] @ old
       }
     }
     | _ => {

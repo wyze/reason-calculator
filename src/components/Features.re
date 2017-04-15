@@ -16,7 +16,7 @@ module Features = {
     <div className>
       <Feature emoji=Checkmark text="Simple operations" />
       <Feature emoji=Checkmark text="Decimals" />
-      <Feature emoji=Soon text="Percentage" />
+      <Feature emoji=Checkmark text="Percentage" />
       <Feature emoji=Checkmark text="Positive/Negative" />
       <Feature emoji=Soon text="Advanced options" />
       <Feature emoji=Soon text="Operation history" />

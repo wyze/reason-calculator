@@ -344,4 +344,105 @@ describe "store" (fun _ => {
 
     expect actual |> toEqual expected;
   });
+
+  describe "Percent" (fun _ => {
+    test "with initial state" (fun _ => {
+      let actual = [
+        Percent,
+      ] |> run;
+      let expected = { operations: [] };
+
+      expect actual |> toEqual expected;
+    });
+
+    test "with Pending state" (fun _ => {
+      let actual = [
+        Input "4",
+        Percent,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "0.04", "", Pending, 0.04 ),
+        ]
+      };
+
+      expect actual |> toEqual expected;
+    });
+
+    test "with no right value" (fun _ => {
+      let actual = [
+        Input "4",
+        Add,
+        Percent,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "4", "0.04", Add, 4.04 ),
+        ]
+      };
+
+      expect actual |> toEqual expected;
+    });
+
+    test "with non-Pending state" (fun _ => {
+      let actual = [
+        Input "4",
+        Add,
+        Input "2",
+        Percent,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "4", "0.02", Add, 4.02 ),
+        ]
+      };
+
+      expect actual |> toEqual expected;
+    });
+
+    test "handles sequence: Percent -> Equals -> Equals" (fun _ => {
+      let actual = [
+        Input "5",
+        Multiply,
+        Input "5",
+        Input "0",
+        Percent,
+        Equals,
+        Equals,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "1.25", "1.25", Equals, 1.25 ),
+          ( "2.5", "0.5", Multiply, 1.25 ),
+          ( "2.5", "2.5", Equals, 2.5 ),
+          ( "5", "0.5", Multiply, 2.5 ),
+        ]
+      };
+
+      expect actual |> toEqual expected;
+    });
+
+    test "handles sequence: Equals -> Percent -> Equals" (fun _ => {
+      let actual = [
+        Input "5",
+        Multiply,
+        Input "5",
+        Input "0",
+        Percent,
+        Equals,
+        Percent,
+        Equals,
+      ] |> run;
+      let expected = {
+        operations: [
+          ( "0.0125", "0.0125", Equals, 0.0125 ),
+          ( "0.025", "0.5", Multiply, 0.0125 ),
+          ( "0.025", "0.025", Equals, 0.025 ),
+          ( "5", "0.5", Multiply, 2.5 ),
+        ]
+      };
+
+      expect actual |> toEqual expected;
+    });
+  });
 });

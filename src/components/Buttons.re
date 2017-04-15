@@ -11,6 +11,7 @@ module Buttons = {
       <ButtonGroup>
         <GreenButton dispatch action=Clear />
         <GreenButton dispatch action=PosNeg />
+        <GreenButton dispatch action=Percent />
         <OperationButton dispatch action=Divide />
       </ButtonGroup>
       <ButtonGroup>

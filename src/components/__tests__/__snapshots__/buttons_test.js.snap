@@ -26,16 +26,27 @@ exports[`Buttons renders 1`] = `
               }
       />,
             Array [
-              <OperationButton
+              <GreenButton
                 reasonProps={
                           Array [
-                                    2,
+                                    8,
                                     "",
                                     [Function],
                                   ]
                 }
       />,
-              0,
+              Array [
+                <OperationButton
+                  reasonProps={
+                              Array [
+                                          2,
+                                          "",
+                                          [Function],
+                                        ]
+                  }
+      />,
+                0,
+              ],
             ],
           ],
         ],
@@ -55,6 +66,15 @@ exports[`Buttons renders 1`] = `
       reasonProps={
         Array [
           7,
+          "",
+          [Function],
+        ]
+      }
+    />
+    <GreenButton
+      reasonProps={
+        Array [
+          8,
           "",
           [Function],
         ]

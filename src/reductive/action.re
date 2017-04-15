@@ -7,7 +7,8 @@ type model =
   | Input string
   | Multiply
   | Subtract
-  | PosNeg;
+  | PosNeg
+  | Percent;
 
 /* model -> (float -> float -> float) */
 let toInfix action =>
@@ -30,5 +31,6 @@ let toText action =>
     | Multiply => "&times;"
     | Subtract => "&minus;"
     | PosNeg => "+/&minus;"
+    | Percent => "%"
     | _ => ""
   };
