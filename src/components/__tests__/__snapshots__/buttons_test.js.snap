@@ -6,9 +6,11 @@ exports[`Buttons renders 1`] = `
     reasonProps={
       Array [
         Array [
-          <ClearButton
+          <GreenButton
             reasonProps={
                   Array [
+                        1,
+                        "",
                         [Function],
                       ]
             }
@@ -40,9 +42,11 @@ exports[`Buttons renders 1`] = `
       ]
     }
   >
-    <ClearButton
+    <GreenButton
       reasonProps={
         Array [
+          1,
+          "",
           [Function],
         ]
       }

@@ -24,7 +24,7 @@ let toInfix action =>
 let toText action =>
   switch action {
     | Add => "+"
-    | Clear => "Clear"
+    | Clear => "C"
     | Divide => "&divide;"
     | Equals => "="
     | Multiply => "&times;"
