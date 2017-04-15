@@ -35,11 +35,16 @@ $ npm run build
 
 > [Full Change Log](changelog.md)
 
-### [v1.2.0](https://github.com/wyze/reason-calculator/releases/tag/v1.2.0) (2017-04-06)
+### [v1.3.0](https://github.com/wyze/reason-calculator/releases/tag/v1.3.0) (2017-04-15)
 
-* [[`cd9c2285f1`](https://github.com/wyze/reason-calculator/commit/cd9c2285f1)] - Add ability to enter decimals (Neil Kistner)
-* [[`93c692abc1`](https://github.com/wyze/reason-calculator/commit/93c692abc1)] - Remove stale Pending action (Neil Kistner)
-* [[`7458b780c5`](https://github.com/wyze/reason-calculator/commit/7458b780c5)] - Convert int to float to prepare for decimal functionality (Neil Kistner)
+* [[`7348e83f13`](https://github.com/wyze/reason-calculator/commit/7348e83f13)] - Add percentage button (Neil Kistner)
+* [[`fa757efb4f`](https://github.com/wyze/reason-calculator/commit/fa757efb4f)] - Remove ClearButton and replace with GreenButton (Neil Kistner)
+* [[`1c79f2bbd2`](https://github.com/wyze/reason-calculator/commit/1c79f2bbd2)] - Use stable reductive & bs-jest (#3) (Cheng Lou)
+* [[`d391100a17`](https://github.com/wyze/reason-calculator/commit/d391100a17)] - Fix dangereouslySetInnerHTML type (#1) (Cheng Lou)
+* [[`dad25d3463`](https://github.com/wyze/reason-calculator/commit/dad25d3463)] - Remove unused dep (#2) (Cheng Lou)
+* [[`5d1da1539b`](https://github.com/wyze/reason-calculator/commit/5d1da1539b)] - Cleanup testing process (Neil Kistner)
+* [[`233257333f`](https://github.com/wyze/reason-calculator/commit/233257333f)] - Upgrade dependencies and fix build (Neil Kistner)
+* [[`ca8eef1903`](https://github.com/wyze/reason-calculator/commit/ca8eef1903)] - Refactor tests (Neil Kistner)
 
 ## License
 
