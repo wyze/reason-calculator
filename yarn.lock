@@ -235,9 +235,9 @@ async@^1.4.0, async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.1.2, async@^2.1.4:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.3.0.tgz#1013d1051047dd320fe24e494d5c66ecaf6147d9"
+async@^2.1.2, async@^2.1.4, async@~2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
   dependencies:
     lodash "^4.14.0"
 
@@ -248,12 +248,6 @@ async@~0.1.22:
 async@~0.9.0:
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
-
-async@~2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
-  dependencies:
-    lodash "^4.14.0"
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -573,9 +567,9 @@ browserify-zlib@^0.1.4:
   dependencies:
     pako "~0.2.0"
 
-"bs-jest@git+https://github.com/BuckleTypes/bs-jest.git":
+bs-jest@^0.0.1:
   version "0.0.1"
-  resolved "git+https://github.com/BuckleTypes/bs-jest.git#64d1514847e6ebfb8120a71ccbb2cd974267d639"
+  resolved "https://registry.yarnpkg.com/bs-jest/-/bs-jest-0.0.1.tgz#2ec3566f4c4554b84dc70ac57ee0e3d8bd2e1d8f"
   dependencies:
     bs-promise "^0.3.1"
     jest "^19.0.2"
@@ -1082,13 +1076,13 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@2.6.1, debug@^2.2.0, debug@~2.6.1:
+debug@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.3, debug@^2.1.1:
+debug@2.6.3, debug@^2.1.1, debug@^2.2.0, debug@~2.6.1:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.3.tgz#0f7eb8c30965ec08c72accfa0130c8b79984141d"
   dependencies:
@@ -2025,13 +2019,9 @@ i@0.3.x:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/i/-/i-0.3.5.tgz#1d2b854158ec8169113c6cb7f6b6801e99e211d5"
 
-iconv-lite@0.4.13:
+iconv-lite@0.4.13, iconv-lite@~0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
-
-iconv-lite@~0.4.13:
-  version "0.4.15"
-  resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
 ieee754@^1.1.4:
   version "1.1.8"
@@ -3698,13 +3688,13 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-read@1.0.5, read@1.0.x:
+read@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/read/-/read-1.0.5.tgz#007a3d169478aa710a491727e453effb92e76203"
   dependencies:
     mute-stream "~0.0.4"
 
-read@~1.0.7:
+read@1.0.x, read@~1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/read/-/read-1.0.7.tgz#b3da19bd052431a97671d44a42634adf710b40c4"
   dependencies:
@@ -3764,10 +3754,6 @@ reason-react@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.1.1.tgz#479780dd0dde32959214208c381c1c61b47934d7"
 
-"reason-react@https://github.com/reasonml/reason-react.git":
-  version "0.1.1"
-  resolved "https://github.com/reasonml/reason-react.git#bfe1d220aef1674c05a804db12635bd01690a639"
-
 redent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/redent/-/redent-1.0.0.tgz#cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde"
@@ -3775,11 +3761,11 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-"reductive@git+https://github.com/reasonml/reductive.git":
-  version "0.0.0"
-  resolved "git+https://github.com/reasonml/reductive.git#8b4ab449fd6906d66f336ed8729e6519f91131e9"
+reductive@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/reductive/-/reductive-0.0.1.tgz#89f9deb3706c7ea9c050a99dea93fb14c2f59b52"
   dependencies:
-    reason-react "https://github.com/reasonml/reason-react.git"
+    reason-react "^0.1.1"
 
 regenerator-runtime@^0.10.0:
   version "0.10.3"
