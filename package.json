@@ -29,7 +29,7 @@
     "version": "node scripts/version.js"
   },
   "devDependencies": {
-    "bs-jest": "git+https://github.com/BuckleTypes/bs-jest.git",
+    "bs-jest": "0.0.1",
     "bs-platform": "git+https://github.com/bloomberg/bucklescript.git",
     "bs-react-test-renderer": "^1.0.0",
     "changelog-maker": "^2.2.5",
