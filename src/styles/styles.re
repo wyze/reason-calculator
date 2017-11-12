@@ -139,6 +139,7 @@ let button: string =
     make
       background::"#6d71ff"
       border::"none"
+      borderRadius::"0"
       color::"#fafafa"
       cursor::"pointer"
       display::"inline-block"
