@@ -34,6 +34,7 @@
     "glamor": "^2.20.40",
     "np": "^2.16.1",
     "npm-run-all": "^4.1.2",
+    "react": "^15.6.2",
     "reason-react": "^0.2.4",
     "reductive": "^0.1.0",
     "rimraf": "^2.6.2",

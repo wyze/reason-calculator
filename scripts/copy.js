@@ -3,15 +3,12 @@
 const fs = require('fs')
 const path = require('path')
 
-const lower = name =>
-  path.basename(name).replace(/^./, letter => letter.toLowerCase())
-
 const root = path.join(__dirname, '..')
 const script = process.argv[2]
 const output = script.replace(path.join(root, 'lib', 'js'), '')
-const js = path.join(path.dirname(script), lower(script))
+const js = path.join(path.dirname(script), path.basename(script))
 
 fs.writeFileSync(
-  path.join(root, path.dirname(output), lower(output)),
+  path.join(root, path.dirname(output), path.basename(output)),
   fs.readFileSync(js)
 )
