@@ -5,10 +5,52 @@ exports[`Hero renders 1`] = `
   className="css-owdkhh css-1rfi9k7"
 >
   <Title
-    reasonProps={0}
+    reasonProps={
+      Array [
+        Array [
+          "Title",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
+      ]
+    }
   />
   <Features
-    reasonProps={0}
+    reasonProps={
+      Array [
+        Array [
+          "Features",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
+      ]
+    }
   />
 </div>
 `;

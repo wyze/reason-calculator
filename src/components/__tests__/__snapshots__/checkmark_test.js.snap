@@ -5,32 +5,24 @@ exports[`Checkmark renders 1`] = `
   reasonProps={
     Array [
       Array [
-        <circle
-          cx="32"
-          cy="32"
-          fill="#4bd37b"
-          r="30"
-    />,
+        "Svg",
+        [Function],
         Array [
-          <path
-            d="m46 14l-21 21.6-7-7.2-7 7.2 14 14.4 28-28.8z"
-            fill="#fff"
-    />,
           0,
         ],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        0,
+        [Function],
+        0,
       ],
     ]
   }
->
-  <circle
-    cx="32"
-    cy="32"
-    fill="#4bd37b"
-    r="30"
-  />
-  <path
-    d="m46 14l-21 21.6-7-7.2-7 7.2 14 14.4 28-28.8z"
-    fill="#fff"
-  />
-</Svg>
+/>
 `;

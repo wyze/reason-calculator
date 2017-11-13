@@ -5,7 +5,28 @@ exports[`Feature renders checkmark emoji 1`] = `
   className="css-pat51 css-vlxvfg"
 >
   <Checkmark
-    reasonProps={0}
+    reasonProps={
+      Array [
+        Array [
+          "Checkmark",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
+      ]
+    }
   />
   <h3>
     A feature
@@ -18,7 +39,28 @@ exports[`Feature renders soon emoji 1`] = `
   className="css-pat51 css-vlxvfg"
 >
   <Soon
-    reasonProps={0}
+    reasonProps={
+      Array [
+        Array [
+          "Soon",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
+      ]
+    }
   />
   <h3>
     A feature

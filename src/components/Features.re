@@ -1,18 +1,16 @@
-module Features = {
-  include ReactRe.Component;
-  let name = "Features";
+let component = ReasonReact.statelessComponent("Features");
 
-  type props = ();
+let className: string =
+  Styles.make(
+    ~display="flex",
+    ~flexWrap="wrap",
+    ~justifyContent="space-around",
+    ()
+  ) |> Styles.className;
 
-  let className: string =
-    Styles.make
-      display::"flex"
-      flexWrap::"wrap"
-      justifyContent::"space-around"
-      ()
-    |> Styles.className;
-
-  let render _ =>
+let make = _children => {
+  ...component,
+  render: _self =>
     <div className>
       <Feature emoji=Checkmark text="Simple operations" />
       <Feature emoji=Checkmark text="Decimals" />
@@ -20,9 +18,5 @@ module Features = {
       <Feature emoji=Checkmark text="Positive/Negative" />
       <Feature emoji=Soon text="Advanced options" />
       <Feature emoji=Soon text="Operation history" />
-    </div>;
+    </div>
 };
-
-include ReactRe.CreateComponent Features;
-
-let createElement = wrapProps ();

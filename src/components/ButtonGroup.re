@@ -1,21 +1,10 @@
-module ButtonGroup = {
-  include ReactRe.Component;
-  let name = "ButtonGroup";
+let component = ReasonReact.statelessComponent("ButtonGroup");
 
-  type props = {
-    children: list ReactRe.reactElement,
-  };
+let className: string =
+  Styles.make(~display="flex", ()) |> Styles.className;
 
-  let className: string =
-    Styles.make display::"flex" () |> Styles.className;
-
-  let render { props: { children } } =>
-    <div className>
-      (ReactRe.listToElement children)
-    </div>;
+let make = children => {
+  ...component,
+  render: _self =>
+    ReasonReact.createDomElement("div", ~props={"className": className}, children)
 };
-
-include ReactRe.CreateComponent ButtonGroup;
-
-let createElement ::children =>
-  wrapProps { children: children } ::children;

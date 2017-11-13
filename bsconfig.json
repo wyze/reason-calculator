@@ -1,7 +1,7 @@
 {
   "name": "reason-calculator",
   "reason": {
-    "react-jsx": true
+    "react-jsx": 2
   },
   "bs-dependencies": [
     "reason-react",
@@ -11,9 +11,13 @@
     "bs-jest",
     "bs-react-test-renderer"
   ],
+  "bsc-flags": [
+    "-bs-super-errors"
+  ],
   "js-post-build": {
     "cmd": "./scripts/copy.js"
   },
+  "refmt": 3,
   "sources": [
     {
       "dir": "src",

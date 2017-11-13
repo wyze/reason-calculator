@@ -9,47 +9,52 @@ exports[`App renders 1`] = `
   }
 >
   <Hero
-    reasonProps={0}
+    reasonProps={
+      Array [
+        Array [
+          "Hero",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
+      ]
+    }
   />
   <Calculator
     reasonProps={
       Array [
         Array [
-          <Display
-            reasonProps={
-                  Array [
-                        "0",
-                      ]
-            }
-      />,
+          "Calculator",
+          [Function],
           Array [
-            <Buttons
-              reasonProps={
-                      Array [
-                              [Function],
-                            ]
-              }
-      />,
             0,
           ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
         ],
       ]
     }
-  >
-    <Display
-      reasonProps={
-        Array [
-          "0",
-        ]
-      }
-    />
-    <Buttons
-      reasonProps={
-        Array [
-          [Function],
-        ]
-      }
-    />
-  </Calculator>
+  />
 </main>
 `;

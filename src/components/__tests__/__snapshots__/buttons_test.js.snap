@@ -6,421 +6,121 @@ exports[`Buttons renders 1`] = `
     reasonProps={
       Array [
         Array [
-          <GreenButton
-            reasonProps={
-                  Array [
-                        1,
-                        "",
-                        [Function],
-                      ]
-            }
-      />,
+          "ButtonGroup",
+          [Function],
           Array [
-            <GreenButton
-              reasonProps={
-                      Array [
-                              7,
-                              "",
-                              [Function],
-                            ]
-              }
-      />,
-            Array [
-              <GreenButton
-                reasonProps={
-                          Array [
-                                    8,
-                                    "",
-                                    [Function],
-                                  ]
-                }
-      />,
-              Array [
-                <OperationButton
-                  reasonProps={
-                              Array [
-                                          2,
-                                          "",
-                                          [Function],
-                                        ]
-                  }
-      />,
-                0,
-              ],
-            ],
+            0,
           ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
         ],
       ]
     }
-  >
-    <GreenButton
-      reasonProps={
-        Array [
-          1,
-          "",
-          [Function],
-        ]
-      }
-    />
-    <GreenButton
-      reasonProps={
-        Array [
-          7,
-          "",
-          [Function],
-        ]
-      }
-    />
-    <GreenButton
-      reasonProps={
-        Array [
-          8,
-          "",
-          [Function],
-        ]
-      }
-    />
-    <OperationButton
-      reasonProps={
-        Array [
-          2,
-          "",
-          [Function],
-        ]
-      }
-    />
-  </ButtonGroup>
+  />
   <ButtonGroup
     reasonProps={
       Array [
         Array [
-          <ValueButton
-            reasonProps={
-                  Array [
-                        [Function],
-                        0,
-                        "7",
-                      ]
-            }
-      />,
+          "ButtonGroup",
+          [Function],
           Array [
-            <ValueButton
-              reasonProps={
-                      Array [
-                              [Function],
-                              0,
-                              "8",
-                            ]
-              }
-      />,
-            Array [
-              <ValueButton
-                reasonProps={
-                          Array [
-                                    [Function],
-                                    0,
-                                    "9",
-                                  ]
-                }
-      />,
-              Array [
-                <OperationButton
-                  reasonProps={
-                              Array [
-                                          5,
-                                          "",
-                                          [Function],
-                                        ]
-                  }
-      />,
-                0,
-              ],
-            ],
+            0,
           ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
         ],
       ]
     }
-  >
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "7",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "8",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "9",
-        ]
-      }
-    />
-    <OperationButton
-      reasonProps={
-        Array [
-          5,
-          "",
-          [Function],
-        ]
-      }
-    />
-  </ButtonGroup>
+  />
   <ButtonGroup
     reasonProps={
       Array [
         Array [
-          <ValueButton
-            reasonProps={
-                  Array [
-                        [Function],
-                        0,
-                        "4",
-                      ]
-            }
-      />,
+          "ButtonGroup",
+          [Function],
           Array [
-            <ValueButton
-              reasonProps={
-                      Array [
-                              [Function],
-                              0,
-                              "5",
-                            ]
-              }
-      />,
-            Array [
-              <ValueButton
-                reasonProps={
-                          Array [
-                                    [Function],
-                                    0,
-                                    "6",
-                                  ]
-                }
-      />,
-              Array [
-                <OperationButton
-                  reasonProps={
-                              Array [
-                                          6,
-                                          "",
-                                          [Function],
-                                        ]
-                  }
-      />,
-                0,
-              ],
-            ],
+            0,
           ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
         ],
       ]
     }
-  >
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "4",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "5",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "6",
-        ]
-      }
-    />
-    <OperationButton
-      reasonProps={
-        Array [
-          6,
-          "",
-          [Function],
-        ]
-      }
-    />
-  </ButtonGroup>
+  />
   <ButtonGroup
     reasonProps={
       Array [
         Array [
-          <ValueButton
-            reasonProps={
-                  Array [
-                        [Function],
-                        0,
-                        "1",
-                      ]
-            }
-      />,
+          "ButtonGroup",
+          [Function],
           Array [
-            <ValueButton
-              reasonProps={
-                      Array [
-                              [Function],
-                              0,
-                              "2",
-                            ]
-              }
-      />,
-            Array [
-              <ValueButton
-                reasonProps={
-                          Array [
-                                    [Function],
-                                    0,
-                                    "3",
-                                  ]
-                }
-      />,
-              Array [
-                <OperationButton
-                  reasonProps={
-                              Array [
-                                          0,
-                                          "",
-                                          [Function],
-                                        ]
-                  }
-      />,
-                0,
-              ],
-            ],
+            0,
           ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
         ],
       ]
     }
-  >
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "1",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "2",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          "3",
-        ]
-      }
-    />
-    <OperationButton
-      reasonProps={
-        Array [
-          0,
-          "",
-          [Function],
-        ]
-      }
-    />
-  </ButtonGroup>
+  />
   <ButtonGroup
     reasonProps={
       Array [
         Array [
-          <ValueButton
-            reasonProps={
-                  Array [
-                        [Function],
-                        1,
-                        "0",
-                      ]
-            }
-      />,
+          "ButtonGroup",
+          [Function],
           Array [
-            <ValueButton
-              reasonProps={
-                      Array [
-                              [Function],
-                              0,
-                              ".",
-                            ]
-              }
-      />,
-            Array [
-              <OperationButton
-                reasonProps={
-                          Array [
-                                    3,
-                                    "",
-                                    [Function],
-                                  ]
-                }
-      />,
-              0,
-            ],
+            0,
           ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
         ],
       ]
     }
-  >
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          1,
-          "0",
-        ]
-      }
-    />
-    <ValueButton
-      reasonProps={
-        Array [
-          [Function],
-          0,
-          ".",
-        ]
-      }
-    />
-    <OperationButton
-      reasonProps={
-        Array [
-          3,
-          "",
-          [Function],
-        ]
-      }
-    />
-  </ButtonGroup>
+  />
 </div>
 `;

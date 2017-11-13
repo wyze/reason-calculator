@@ -1,18 +1,12 @@
-module Title = {
-  include ReactRe.Component;
-  let name = "Title";
+let component = ReasonReact.statelessComponent("Title");
 
-  type props = ();
+let className: string =
+  Styles.make(~fontSize="1.5em", ()) |> Styles.className;
 
-  let className: string =
-    Styles.make fontSize::"1.5em" () |> Styles.className;
-
-  let render _ =>
+let make = _children => {
+  ...component,
+  render: _self =>
     <h1 className>
-      (ReactRe.stringToElement "Reason Calculator")
-    </h1>;
+      {ReasonReact.stringToElement("Reason Calculator")}
+    </h1>
 };
-
-include ReactRe.CreateComponent Title;
-
-let createElement = wrapProps ();

@@ -3,13 +3,12 @@ open Expect;
 
 let _ =
 
-describe "App" (fun _ => {
-  test "renders" (fun _ => {
-    let dispatch = fun _ => ();
+describe("App", () => {
+  test("renders", () => {
+    let dispatch = _action => ();
     let state = Store.init;
-    let tree = App.createElement ::state ::dispatch children::[] ()
-      |> ReactShallowRenderer.renderWithRenderer;
+    let tree = <App dispatch state /> |> ReactShallowRenderer.renderWithRenderer;
 
-    expect tree |> toMatchSnapshot;
+    expect(tree) |> toMatchSnapshot;
   });
 });

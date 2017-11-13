@@ -1,32 +1,25 @@
-module Hero = {
-  include ReactRe.Component;
-  let name = "Hero";
+let component = ReasonReact.statelessComponent("Hero");
 
-  type props = ();
+let className: string =
+  Styles.merge([
+    Styles.make(
+      ~background="#dedede",
+      ~borderRadius="5px",
+      ~display="block",
+      ~padding="1em",
+      ~marginBottom="4em",
+      ~textAlign="center",
+      ~width="30em",
+      ()
+    ) |> Styles.className,
+    Styles.make(~width="35em", ()) |> Styles.small,
+  ]);
 
-  let className: string =
-    Styles.merge [
-      Styles.make
-        background::"#dedede"
-        borderRadius::"5px"
-        display::"block"
-        padding::"1em"
-        marginBottom::"4em"
-        textAlign::"center"
-        width::"30em"
-        ()
-      |> Styles.className,
-      Styles.make width::"35em" () |> Styles.small,
-    ];
-
-
-  let render _ =>
+let make = _children => {
+  ...component,
+  render: _self =>
     <div className>
       <Title />
       <Features />
-    </div>;
+    </div>
 };
-
-include ReactRe.CreateComponent Hero;
-
-let createElement = wrapProps ();

@@ -2,7 +2,7 @@
 
 exports[`ValueButton renders 1`] = `
 <button
-  className="css-1uxa59e css-1efi2jj css-1c4ilrr"
+  className="css-1csotgl css-1efi2jj css-tdosd6"
   onClick={[Function]}
   value="1"
 >
@@ -12,7 +12,7 @@ exports[`ValueButton renders 1`] = `
 
 exports[`ValueButton renders expanded button 1`] = `
 <button
-  className="css-1uxa59e css-1efi2jj css-1c4ilrr css-94frz2"
+  className="css-1csotgl css-1efi2jj css-tdosd6 css-94frz2"
   onClick={[Function]}
   value="1"
 >

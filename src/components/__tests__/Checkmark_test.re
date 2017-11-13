@@ -3,11 +3,10 @@ open Expect;
 
 let _ =
 
-describe "Checkmark" (fun _ => {
-  test "renders" (fun _ => {
-    let tree = Checkmark.createElement children::[] ()
-      |> ReactShallowRenderer.renderWithRenderer;
+describe("Checkmark", () => {
+  test("renders", () => {
+    let tree = <Checkmark /> |> ReactShallowRenderer.renderWithRenderer;
 
-    expect tree |> toMatchSnapshot;
+    expect(tree) |> toMatchSnapshot;
   });
 });

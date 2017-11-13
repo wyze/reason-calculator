@@ -11,48 +11,144 @@ exports[`Features renders 1`] = `
   <Feature
     reasonProps={
       Array [
-        0,
-        "Simple operations",
+        Array [
+          "Feature",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
       ]
     }
   />
   <Feature
     reasonProps={
       Array [
-        0,
-        "Decimals",
+        Array [
+          "Feature",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
       ]
     }
   />
   <Feature
     reasonProps={
       Array [
-        0,
-        "Percentage",
+        Array [
+          "Feature",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
       ]
     }
   />
   <Feature
     reasonProps={
       Array [
-        0,
-        "Positive/Negative",
+        Array [
+          "Feature",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
       ]
     }
   />
   <Feature
     reasonProps={
       Array [
-        1,
-        "Advanced options",
+        Array [
+          "Feature",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
       ]
     }
   />
   <Feature
     reasonProps={
       Array [
-        1,
-        "Operation history",
+        Array [
+          "Feature",
+          [Function],
+          Array [
+            0,
+          ],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+          0,
+          [Function],
+          0,
+        ],
       ]
     }
   />

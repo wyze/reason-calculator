@@ -1,29 +1,21 @@
-module Display = {
-  include ReactRe.Component;
-  let name = "Display";
+let component = ReasonReact.statelessComponent("Display");
 
-  type props = {
-    output: string,
-  };
+let className: string =
+  Styles.make(
+    ~alignItems="center",
+    ~color="#fafafa",
+    ~display="flex",
+    ~fontSize="1.5em",
+    ~height="2.5em",
+    ~justifyContent="flex-end",
+    ~padding="0 1em",
+    ()
+  ) |> Styles.className;
 
-  let className: string =
-    Styles.make
-      alignItems::"center"
-      color::"#fafafa"
-      display::"flex"
-      fontSize::"1.5em"
-      height::"2.5em"
-      justifyContent::"flex-end"
-      padding::"0 1em"
-      ()
-    |> Styles.className;
-
-  let render { props: { output } } =>
+let make = (~output, _children) => {
+  ...component,
+  render: _self =>
     <div className>
-      (ReactRe.stringToElement output)
-    </div>;
+      {ReasonReact.stringToElement(output)}
+    </div>
 };
-
-include ReactRe.CreateComponent Display;
-
-let createElement ::output => wrapProps { output: output };

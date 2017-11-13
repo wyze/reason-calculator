@@ -4,9 +4,24 @@ exports[`GreenButton renders 1`] = `
 <OperationButton
   reasonProps={
     Array [
-      0,
-      "css-h4v74b css-1eo5al3",
-      [Function],
+      Array [
+        "OperationButton",
+        [Function],
+        Array [
+          0,
+        ],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        0,
+        [Function],
+        0,
+      ],
     ]
   }
 />
@@ -16,9 +31,24 @@ exports[`GreenButton renders a class name 1`] = `
 <OperationButton
   reasonProps={
     Array [
-      0,
-      "css-h4v74b css-1eo5al3 css-aori8y",
-      [Function],
+      Array [
+        "OperationButton",
+        [Function],
+        Array [
+          0,
+        ],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        0,
+        [Function],
+        0,
+      ],
     ]
   }
 />

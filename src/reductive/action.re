@@ -4,25 +4,25 @@ type model =
   | Divide
   | Equals
   | Pending
-  | Input string
+  | Input(string)
   | Multiply
   | Subtract
   | PosNeg
   | Percent;
 
 /* model -> (float -> float -> float) */
-let toInfix action =>
+let toInfix = action =>
   switch action {
     | Add => (+.)
     | Divide => (/.)
     | Multiply => (*.)
     | Subtract => (-.)
     /* noop function */
-    | _ => (fun left _ => left)
+    | _ => ((left, _) => left)
   };
 
 /* model -> string */
-let toText action =>
+let toText = action =>
   switch action {
     | Add => "+"
     | Clear => "C"

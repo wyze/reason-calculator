@@ -5,6 +5,7 @@ node_modules
 src/**/*.js
 dist
 lib
+.bsb.lock
 .merlin
 
 # Logs

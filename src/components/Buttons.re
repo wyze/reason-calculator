@@ -1,12 +1,8 @@
-module Buttons = {
-  include ReactRe.Component;
-  let name = "Buttons";
+let component = ReasonReact.statelessComponent("Buttons");
 
-  type props = {
-    dispatch: Store.action => unit,
-  };
-
-  let render { props: { dispatch } } =>
+let make = (~dispatch, _children) => {
+  ...component,
+  render: _self =>
     <div>
       <ButtonGroup>
         <GreenButton dispatch action=Clear />
@@ -37,9 +33,5 @@ module Buttons = {
         <ValueButton dispatch value="." />
         <OperationButton dispatch action=Equals />
       </ButtonGroup>
-    </div>;
+    </div>
 };
-
-include ReactRe.CreateComponent Buttons;
-
-let createElement ::dispatch => wrapProps { dispatch: dispatch };

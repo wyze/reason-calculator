@@ -3,12 +3,15 @@ open Expect;
 
 let _ =
 
-describe "Calculator" (fun _ => {
-  test "renders" (fun _ => {
-    let children = [ <div>(ReactRe.stringToElement "child")</div>, <span /> ];
-    let tree = Calculator.createElement ::children ()
-      |> ReactShallowRenderer.renderWithRenderer;
+describe("Calculator", () => {
+  test("renders", () => {
+    let tree = (
+      <Calculator>
+        <div>{ReasonReact.stringToElement("child")}</div>
+        <span />
+      </Calculator>
+    ) |> ReactShallowRenderer.renderWithRenderer;
 
-    expect tree |> toMatchSnapshot;
+    expect(tree) |> toMatchSnapshot;
   });
 });

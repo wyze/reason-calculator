@@ -3,11 +3,15 @@ open Expect;
 
 let _ =
 
-describe "Svg" (fun _ => {
-  test "renders" (fun _ => {
-    let children = [ <g />, <path /> ];
-    let tree = Svg.createElement ::children () |> ReactShallowRenderer.renderWithRenderer;
+describe("Svg", () => {
+  test("renders", () => {
+    let tree = (
+      <Svg>
+        <g />
+        <path />
+      </Svg>
+    ) |> ReactShallowRenderer.renderWithRenderer;
 
-    expect tree |> toMatchSnapshot;
+    expect(tree) |> toMatchSnapshot;
   });
 });

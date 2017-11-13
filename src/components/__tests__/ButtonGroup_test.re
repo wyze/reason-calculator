@@ -3,12 +3,15 @@ open Expect;
 
 let _ =
 
-describe "ButtonGroup" (fun _ => {
-  test "renders" (fun _ => {
-    let children = [ <div>(ReactRe.stringToElement "child")</div>, <span /> ];
-    let tree = ButtonGroup.createElement ::children ()
-      |> ReactShallowRenderer.renderWithRenderer;
+describe("ButtonGroup", () => {
+  test("renders", () => {
+    let tree = (
+      <ButtonGroup>
+        <div>{ReasonReact.stringToElement("child")}</div>
+        <span />
+      </ButtonGroup>
+    ) |> ReactShallowRenderer.renderWithRenderer;
 
-    expect tree |> toMatchSnapshot;
+    expect(tree) |> toMatchSnapshot;
   });
 });

@@ -1,10 +1,7 @@
 const HtmlPlugin = require('webpack-html-plugin')
 const join = require('path').join
 
-const stats = {
-  chunks: false,
-  modules: false,
-}
+const stats = 'errors-only'
 
 module.exports = [
   {

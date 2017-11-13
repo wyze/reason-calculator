@@ -2,48 +2,49 @@ open Jest;
 open Expect;
 open Action;
 
-type tuple = { operations: list ( string, string, Action.model, float ) };
+type tuple = { operations: list(( string, string, Action.model, float )) };
 
-let toTuple ({ operations }: Store.state): tuple => {
-  operations: List.map
-    (fun { Operation.left, right, symbol, total } => ( left, right, symbol, total ))
+let toTuple = ({ operations }: Store.state): tuple => {
+  operations: List.map(
+    ({ Operation.left, right, symbol, total }) => ( left, right, symbol, total ),
     operations
+  )
 };
 
-let reduce state action => Store.reducer state action;
+let reduce = (state, action) => Store.reducer(state, action);
 
-let run actions =>
+let run = actions =>
   actions
-    |> List.fold_left reduce Store.init
+    |> List.fold_left(reduce, Store.init)
     |> toTuple;
 
 let _ =
 
-describe "store" (fun _ => {
-  test "returns initial state" (fun _ => {
-    let actual = Reductive.Store.getState Store.store;
+describe("store", () => {
+  test("returns initial state", () => {
+    let actual = Reductive.Store.getState(Store.store);
     let expected = Store.init;
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Clear action" (fun _ => {
+  test("reducer handles Clear action", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
-      Input "3",
+      Input("3"),
       Clear,
     ] |> run;
     let expected = { operations: [] };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Equals action" (fun _ => {
+  test("reducer handles Equals action", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
-      Input "2",
+      Input("2"),
       Equals,
     ] |> run;
     let expected = {
@@ -53,14 +54,14 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles double Equals action" (fun _ => {
+  test("reducer handles double Equals action", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
-      Input "2",
+      Input("2"),
       Equals,
       Equals,
     ] |> run;
@@ -73,12 +74,12 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Input action with no previous state" (fun _ => {
+  test("reducer handles Input action with no previous state", () => {
     let actual = [
-      Input "4",
+      Input("4"),
     ] |> run;
     let expected = {
       operations: [
@@ -86,13 +87,13 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Input action with Pending state" (fun _ => {
+  test("reducer handles Input action with Pending state", () => {
     let actual = [
-      Input "1",
-      Input "4",
+      Input("1"),
+      Input("4"),
     ] |> run;
     let expected = {
       operations: [
@@ -100,14 +101,14 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Input action with non-Pending state" (fun _ => {
+  test("reducer handles Input action with non-Pending state", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
-      Input "4",
+      Input("4"),
     ] |> run;
     let expected = {
       operations: [
@@ -115,16 +116,16 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Input action after Equals state" (fun _ => {
+  test("reducer handles Input action after Equals state", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
-      Input "2",
+      Input("2"),
       Equals,
-      Input "4",
+      Input("4"),
     ] |> run;
     let expected = {
       operations: [
@@ -134,12 +135,12 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Add action" (fun _ => {
+  test("reducer handles Add action", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
     ] |> run;
     let expected = {
@@ -148,12 +149,12 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles switch from Add to Subtract action" (fun _ => {
+  test("reducer handles switch from Add to Subtract action", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
       Subtract,
     ] |> run;
@@ -163,14 +164,14 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles Add action after Equals action" (fun _ => {
+  test("reducer handles Add action after Equals action", () => {
     let actual = [
-      Input "1",
+      Input("1"),
       Add,
-      Input "1",
+      Input("1"),
       Equals,
       Add,
     ] |> run;
@@ -182,22 +183,22 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  describe "PosNeg" (fun _ => {
-    test "with initial state" (fun _ => {
+  describe("PosNeg", () => {
+    test("with initial state", () => {
       let actual = [
         PosNeg,
       ] |> run;
       let expected = { operations: [] };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "with Pending state" (fun _ => {
+    test("with Pending state", () => {
       let actual = [
-        Input "4",
+        Input("4"),
         PosNeg,
       ] |> run;
       let expected = {
@@ -206,14 +207,14 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "when total would be 0" (fun _ => {
+    test("when total would be 0", () => {
       let actual = [
-        Input "5",
+        Input("5"),
         Subtract,
-        Input "5",
+        Input("5"),
         PosNeg,
       ] |> run;
       let expected = {
@@ -222,12 +223,12 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "with no right value" (fun _ => {
+    test("with no right value", () => {
       let actual = [
-        Input "4",
+        Input("4"),
         Add,
         PosNeg,
       ] |> run;
@@ -237,14 +238,14 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "with non-Pending state" (fun _ => {
+    test("with non-Pending state", () => {
       let actual = [
-        Input "4",
+        Input("4"),
         Add,
-        Input "2",
+        Input("2"),
         PosNeg,
       ] |> run;
       let expected = {
@@ -253,14 +254,14 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "handles sequence: PosNeg -> Equals -> Equals" (fun _ => {
+    test("handles sequence: PosNeg -> Equals -> Equals", () => {
       let actual = [
-        Input "5",
+        Input("5"),
         Multiply,
-        Input "3",
+        Input("3"),
         PosNeg,
         Equals,
         Equals,
@@ -274,14 +275,14 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "handles sequence: Equals -> PosNeg -> Equals" (fun _ => {
+    test("handles sequence: Equals -> PosNeg -> Equals", () => {
       let actual = [
-        Input "5",
+        Input("5"),
         Multiply,
-        Input "3",
+        Input("3"),
         PosNeg,
         Equals,
         PosNeg,
@@ -296,19 +297,19 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
   });
 
-  test "reducer handles decimals" (fun _ => {
+  test("reducer handles decimals", () => {
     let actual = [
-      Input "5",
-      Input ".",
-      Input "3",
+      Input("5"),
+      Input("."),
+      Input("3"),
       Add,
-      Input "4",
-      Input ".",
-      Input "7",
+      Input("4"),
+      Input("."),
+      Input("7"),
       Equals,
     ] |> run;
     let expected = {
@@ -318,21 +319,21 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  test "reducer handles double decimals" (fun _ => {
+  test("reducer handles double decimals", () => {
     let actual = [
-      Input "2",
-      Input ".",
-      Input ".",
-      Input "3",
+      Input("2"),
+      Input("."),
+      Input("."),
+      Input("3"),
       Add,
-      Input "2",
-      Input ".",
-      Input "7",
-      Input ".",
-      Input "5",
+      Input("2"),
+      Input("."),
+      Input("7"),
+      Input("."),
+      Input("5"),
       Equals,
     ] |> run;
     let expected = {
@@ -342,22 +343,22 @@ describe "store" (fun _ => {
       ]
     };
 
-    expect actual |> toEqual expected;
+    expect(actual) |> toEqual(expected);
   });
 
-  describe "Percent" (fun _ => {
-    test "with initial state" (fun _ => {
+  describe("Percent", () => {
+    test("with initial state", () => {
       let actual = [
         Percent,
       ] |> run;
       let expected = { operations: [] };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "with Pending state" (fun _ => {
+    test("with Pending state", () => {
       let actual = [
-        Input "4",
+        Input("4"),
         Percent,
       ] |> run;
       let expected = {
@@ -366,12 +367,12 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "with no right value" (fun _ => {
+    test("with no right value", () => {
       let actual = [
-        Input "4",
+        Input("4"),
         Add,
         Percent,
       ] |> run;
@@ -381,14 +382,14 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "with non-Pending state" (fun _ => {
+    test("with non-Pending state", () => {
       let actual = [
-        Input "4",
+        Input("4"),
         Add,
-        Input "2",
+        Input("2"),
         Percent,
       ] |> run;
       let expected = {
@@ -397,15 +398,15 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "handles sequence: Percent -> Equals -> Equals" (fun _ => {
+    test("handles sequence: Percent -> Equals -> Equals", () => {
       let actual = [
-        Input "5",
+        Input("5"),
         Multiply,
-        Input "5",
-        Input "0",
+        Input("5"),
+        Input("0"),
         Percent,
         Equals,
         Equals,
@@ -419,15 +420,15 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
 
-    test "handles sequence: Equals -> Percent -> Equals" (fun _ => {
+    test("handles sequence: Equals -> Percent -> Equals", () => {
       let actual = [
-        Input "5",
+        Input("5"),
         Multiply,
-        Input "5",
-        Input "0",
+        Input("5"),
+        Input("0"),
         Percent,
         Equals,
         Percent,
@@ -442,7 +443,7 @@ describe "store" (fun _ => {
         ]
       };
 
-      expect actual |> toEqual expected;
+      expect(actual) |> toEqual(expected);
     });
   });
 });

@@ -1,11 +1,9 @@
 include Styles;
 
-module Provider =
-  Reductive.MakeProvider {
-    type state = Store.state;
-    type action = Store.action;
-  };
+module Provider = {
+  let make = Reductive.Provider.createMake(Store.store);
+};
 
-let app = <Provider store=Store.store component=App.createElement />;
+let app = <Provider component=App.make />;
 
-ReactDOMRe.renderToElementWithClassName app "root";
+ReactDOMRe.renderToElementWithClassName(app, "root");
