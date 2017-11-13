@@ -1,5 +1,11 @@
 ## Change Log
 
+### [v1.4.0](https://github.com/wyze/reason-calculator/releases/tag/v1.4.0) (2017-11-13)
+
+* [[`714f05e80b`](https://github.com/wyze/reason-calculator/commit/714f05e80b)] - Upgrade dependencies and to Reason 3 syntax (Neil Kistner)
+* [[`ead5c1f94e`](https://github.com/wyze/reason-calculator/commit/ead5c1f94e)] - Override user-agent border radius on buttons (Neil Kistner)
+* [[`1b04dc0f29`](https://github.com/wyze/reason-calculator/commit/1b04dc0f29)] - Upgrade dependencies (Neil Kistner)
+
 ### [v1.3.0](https://github.com/wyze/reason-calculator/releases/tag/v1.3.0) (2017-04-15)
 
 * [[`7348e83f13`](https://github.com/wyze/reason-calculator/commit/7348e83f13)] - Add percentage button (Neil Kistner)
