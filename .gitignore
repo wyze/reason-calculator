@@ -2,11 +2,12 @@
 node_modules
 
 # Build
-src/**/*.js
+.cache
 dist
 lib
 .bsb.lock
 .merlin
+**/*.bs.js
 
 # Logs
 *.log

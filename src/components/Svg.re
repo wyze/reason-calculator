@@ -1,24 +1,24 @@
-let component = ReasonReact.statelessComponent("Svg");
+module Styles = {
+  open Css;
 
-let viewBox: string = "0 0 64 64";
-let className: string =
-  Styles.merge([
-    Styles.make(
-      ~height="16px",
-      ~marginRight="1em",
-      ~marginTop="0",
-      ~width="16px",
-      ()
-    ) |> Styles.className,
-    Styles.make(~marginTop="-6px", ()) |> Styles.small,
-  ]);
-
-let make = children => {
-  ...component,
-  render: _self =>
-    <div className>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox enableBackground=("new " ++ viewBox)>
-        {ReasonReact.createDomElement("g", ~props=Js.Obj.empty(), children)}
-      </svg>
-    </div>
+  let container =
+    merge([
+      style([
+        height(px(16)),
+        marginRight(em(1.)),
+        marginTop(`zero),
+        width(px(16)),
+      ]),
+      style([media("(min-width: 53.125em)", [marginTop(px(-6))])]),
+    ]);
 };
+
+[@react.component]
+let make = (~children) =>
+  <div className=Styles.container>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64">
+      <g> children </g>
+    </svg>
+  </div>;

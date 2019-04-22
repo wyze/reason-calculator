@@ -1,22 +1,17 @@
-let component = ReasonReact.statelessComponent("Features");
+module Styles = {
+  open Css;
 
-let className: string =
-  Styles.make(
-    ~display="flex",
-    ~flexWrap="wrap",
-    ~justifyContent="space-around",
-    ()
-  ) |> Styles.className;
-
-let make = _children => {
-  ...component,
-  render: _self =>
-    <div className>
-      <Feature emoji=Checkmark text="Simple operations" />
-      <Feature emoji=Checkmark text="Decimals" />
-      <Feature emoji=Checkmark text="Percentage" />
-      <Feature emoji=Checkmark text="Positive/Negative" />
-      <Feature emoji=Soon text="Advanced options" />
-      <Feature emoji=Soon text="Operation history" />
-    </div>
+  let container =
+    style([display(`flex), flexWrap(`wrap), justifyContent(`spaceAround)]);
 };
+
+[@react.component]
+let make = () =>
+  <div className=Styles.container>
+    <Feature emoji=Checkmark text="Simple operations" />
+    <Feature emoji=Checkmark text="Decimals" />
+    <Feature emoji=Checkmark text="Percentage" />
+    <Feature emoji=Checkmark text="Positive/Negative" />
+    <Feature emoji=Soon text="Advanced options" />
+    <Feature emoji=Soon text="Operation history" />
+  </div>;

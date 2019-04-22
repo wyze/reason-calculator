@@ -1,30 +1,30 @@
-let component = ReasonReact.statelessComponent("Feature");
+type emoji =
+  | Checkmark
+  | Soon;
 
-type emoji = Checkmark | Soon;
+module Styles = {
+  open Css;
 
-let className: string =
-  Styles.merge([
-    Styles.make(
-      ~alignItems="center",
-      ~display="flex",
-      ~flexBasis="40%",
-      ~height="2em",
-      ()
-    ) |> Styles.className,
-    Styles.make(~flexBasis="35%", ()) |> Styles.small,
-  ]);
-
-let getEmoji = emoji =>
-  switch emoji {
-    | Checkmark => <Checkmark />
-    | Soon => <Soon />
-  };
-
-let make = (~emoji, ~text, _children) => {
-  ...component,
-  render: _self =>
-    <div className>
-      {getEmoji(emoji)}
-      <h3>{ReasonReact.stringToElement(text)}</h3>
-    </div>
+  let container =
+    merge([
+      style([
+        alignItems(`center),
+        display(`flex),
+        flexBasis(pct(40.)),
+        height(em(2.)),
+      ]),
+      style([media("(min-width: 53.125em)", [flexBasis(pct(35.))])]),
+    ]);
 };
+
+[@react.component]
+let make = (~emoji: emoji, ~text) =>
+  <div className=Styles.container>
+    {
+      switch (emoji) {
+      | Checkmark => <Checkmark />
+      | Soon => <Soon />
+      }
+    }
+    <h3> text->React.string </h3>
+  </div>;

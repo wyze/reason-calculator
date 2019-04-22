@@ -1,23 +1,14 @@
 {
   "name": "reason-calculator",
   "reason": {
-    "react-jsx": 2
+    "react-jsx": 3
   },
-  "bs-dependencies": [
-    "reason-react",
-    "reductive"
-  ],
+  "bs-dependencies": ["bs-css", "reason-react"],
   "bs-dev-dependencies": [
-    "bs-jest",
-    "bs-react-test-renderer"
+    "@glennsl/bs-jest",
+    "bs-jest-dom",
+    "bs-react-testing-library"
   ],
-  "bsc-flags": [
-    "-bs-super-errors"
-  ],
-  "js-post-build": {
-    "cmd": "./scripts/copy.js"
-  },
-  "refmt": 3,
   "sources": [
     {
       "dir": "src",
@@ -30,18 +21,14 @@
               "type": "dev"
             }
           ]
-        },
-        {
-          "dir": "reductive",
-          "subdirs": [
-            {
-              "dir": "__tests__",
-              "type": "dev"
-            }
-          ]
-        },
-        "styles"
+        }
       ]
     }
-  ]
+  ],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "refmt": 3
 }
