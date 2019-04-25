@@ -30,11 +30,14 @@ $ npm run build
 
 > [Full Change Log](changelog.md)
 
-### [v1.4.0](https://github.com/wyze/reason-calculator/releases/tag/v1.4.0) (2017-11-13)
+### [v2.0.0](https://github.com/wyze/reason-calculator/releases/tag/v2.0.0) (2019-04-24)
 
-* [[`714f05e80b`](https://github.com/wyze/reason-calculator/commit/714f05e80b)] - Upgrade dependencies and to Reason 3 syntax (Neil Kistner)
-* [[`ead5c1f94e`](https://github.com/wyze/reason-calculator/commit/ead5c1f94e)] - Override user-agent border radius on buttons (Neil Kistner)
-* [[`1b04dc0f29`](https://github.com/wyze/reason-calculator/commit/1b04dc0f29)] - Upgrade dependencies (Neil Kistner)
+* Add back version scripts ([@wyze](https://github.com/wyze) in [a370a37](https://github.com/wyze/reason-calculator/commit/a370a37))
+* Update demo URL ([@wyze](https://github.com/wyze) in [35baf4a](https://github.com/wyze/reason-calculator/commit/35baf4a))
+* Meta file updates ([@wyze](https://github.com/wyze) in [ae86464](https://github.com/wyze/reason-calculator/commit/ae86464))
+* Add tests with `bs-react-testing-library` ([@wyze](https://github.com/wyze) in [18da5d2](https://github.com/wyze/reason-calculator/commit/18da5d2))
+* Convert project to reason-react v0.7.0 and JSX 3 syntax ([@wyze](https://github.com/wyze) in [5a44d15](https://github.com/wyze/reason-calculator/commit/5a44d15))
+* Fix build to work on Travis CI ([@wyze](https://github.com/wyze) in [fb3331f](https://github.com/wyze/reason-calculator/commit/fb3331f))
 
 ## License
 
