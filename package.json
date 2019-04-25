@@ -17,6 +17,7 @@
     "clean:bsb": "bsb -clean-world",
     "clean:parcel": "rimraf dist lib .merlin",
     "pretest": "bsb -make-world",
+    "now-build": "yarn build",
     "start": "run-p start:*",
     "start:bsb": "bsb -make-world -w",
     "start:parcel": "parcel public/index.html",
