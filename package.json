@@ -16,12 +16,14 @@
     "clean": "run-p clean:*",
     "clean:bsb": "bsb -clean-world",
     "clean:parcel": "rimraf dist lib .merlin",
+    "postversion": "github-release",
     "pretest": "bsb -make-world",
     "now-build": "yarn build",
     "start": "run-p start:*",
     "start:bsb": "bsb -make-world -w",
     "start:parcel": "parcel public/index.html",
-    "test": "yarn jest"
+    "test": "yarn jest",
+    "version": "changelog"
   },
   "dependencies": {
     "bs-css": "^8.0.4",
