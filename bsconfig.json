@@ -7,12 +7,17 @@
   "bs-dev-dependencies": [
     "@glennsl/bs-jest",
     "bs-jest-dom",
-    "bs-react-testing-library"
+    "bs-react-testing-library",
+    "bs-webapi"
   ],
   "sources": [
     {
       "dir": "src",
       "subdirs": [
+        {
+          "dir": "__tests__",
+          "type": "dev"
+        },
         {
           "dir": "components",
           "subdirs": [
@@ -26,7 +31,7 @@
     }
   ],
   "package-specs": {
-    "module": "es6",
+    "module": "commonjs",
     "in-source": true
   },
   "suffix": ".bs.js",

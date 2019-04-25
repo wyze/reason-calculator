@@ -1,6 +1,6 @@
 [@react.component]
 let make = () =>
-  <Svg>
+  <Svg title="soon">
     <g fill="#4d5357">
       <path d="m61 18l-16-16v10h-42v12h42v10z" />
       <path

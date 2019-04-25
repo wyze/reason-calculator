@@ -49,7 +49,10 @@ let make = () => {
   <div className=Styles.container>
     <Hero />
     <div className=Styles.calculator>
-      <div className=Styles.display> display->React.string </div>
+      <label className=Styles.display>
+        display->React.string
+        <input type_="hidden" />
+      </label>
       <div className=Styles.buttons>
         <Button action=Clear text="C" />
         <Button action=PosNeg text={js|+/\u2212|js} />
