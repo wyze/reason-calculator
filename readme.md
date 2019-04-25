@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-https://reason-calculator.now.sh
+https://reason-calculator.wyze.now.sh
 
 ## Setup
 
@@ -43,5 +43,5 @@ MIT © [Neil Kistner](https://neilkistner.com)
 [circleci-image]: https://img.shields.io/circleci/project/github/wyze/reason-calculator.svg?style=flat-square
 [circleci-url]: https://circleci.com/gh/wyze/reason-calculator
 
-[website-image]: https://img.shields.io/website-up-down-green-red/https/reason-calculator.now.sh.svg?style=flat-square
-[website-url]: https://reason-calculator.now.sh
+[website-image]: https://img.shields.io/website-up-down-green-red/https/reason-calculator.wyze.now.sh.svg?style=flat-square
+[website-url]: https://reason-calculator.wyze.now.sh
